@@ -1,13 +1,186 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+  background: rgba(63, 55, 55, 0.329);
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.top-header {
+  background: black;
+  height: 80px;  
 }
+.top-container{
+  padding-top: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.lft{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  margin-left: 90px;
+}
+
+
+.lft i {
+  color: rgb(194,157,89);
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.lft i :hover {
+  color: aliceblue;
+}
+.lft h2 {
+  color: rgb(255,255,255);
+  font-size: 20px;
+}
+.rgt{
+  gap: 10px;
+  display: flex;
+  flex-direction: row;
+  margin-right: 90px;
+}
+
+.rgt i {
+  color: rgb(194,157,89);
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 30px; 
+  height: 40px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.rgt i :hover {
+  color: aliceblue;
+}
+
+.bottom-header{
+  background: white;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  align-content: center;
+  height: 80px;
+  justify-content: space-between;
+  padding-right: 40px;
+}
+
+.bottom-header img{
+  padding-left: 40px;
+}
+
+.bottom-header-right{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+gap: 20px;
+align-content: center;
+align-items: center;
+
+}
+
+.bottom-header-right i {
+  color: rgb(0, 0, 0);
+  font-weight: 900;
+  font-size: 35px;
+  padding-top: 11px;
+  cursor: pointer;
+}
+.bottom-header-right button {
+  color: aliceblue;
+  background: rgb(194,157,89);
+  padding: 9px;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+}
+
+
+
+.menu-icon {
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+
+
+.bar {
+  width: 100%;
+  height: 4px;
+  background-color: rgb(194,157,89);
+}
+
+/* Responsive styles for screens up to 991px */
+@media (max-width: 991px) {
+
+  .top-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .lft,
+  .rgt {
+    margin: 0;
+    justify-content: center;
+  }
+  .bottom-header {
+    padding-right: 20px;
+  }
+}
+
+/* Responsive styles for screens up to 425px */
+@media (max-width: 425px) {
+  .top-container {
+    flex-direction: column; /* Stack the elements vertically */
+  }
+
+  .lft,
+  .rgt {
+    flex-direction: column; /* Stack the items vertically */
+    justify-content: center; /* Center the items vertically */
+    align-items: center; /* Center the items horizontally */
+    gap: 5px; /* Reduce the gap between items */
+    margin: 10px 0; /* Adjust the margin */
+  }
+
+  .bottom-header-right {
+    padding-right: 10px; /* Adjust the padding */
+  }
+
+  .menu-icon {
+    margin-right: 10px; /* Adjust the margin */
+  }
+ 
+  .bottom-header img {
+    padding-left: 20px;
+    width: 50px;
+  }
+  .bottom-header-right {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .bottom-header-right button {
+    margin-top: 10px;
+  }
+  .menu-icon {
+    padding-right: 20px;
+  }  
+
+
+
+}
+
+
+/* ============================================================================== */
+
+
+

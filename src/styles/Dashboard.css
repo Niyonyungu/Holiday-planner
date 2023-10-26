@@ -1,0 +1,192 @@
+
+.dashboard-center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+
+/* ----=======================================---*/
+
+
+.wrap-da{
+    display: flex;
+    flex-direction: column;  
+}
+
+  /* Header  */
+  .header { 
+    background-color: rgba(255, 255, 255, 0.925);
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
+  }
+  
+  .header h3{
+    margin-left: 15%;
+    color: rgb(84, 81, 81);
+  }
+
+
+  /* End Header  */
+  
+  /* Sidebar  */
+
+
+  .icon {
+    vertical-align: middle;
+    margin-right: 15px;
+    font-size: 20px;
+  }
+
+
+
+  #sidebar {
+    height: 100%;
+    background-color: rgb(245, 242, 242);
+    box-shadow: 0 6px 7px 3px rgba(0, 0, 0, 0.35);
+  }
+  
+/* .photo-wrap{
+    width: 60px;
+    height: 60px;
+    background-color: red;
+    border-radius: 50%;
+} */
+.photo-wrap img{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+  .sidebar-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px ;
+    padding-top: 10px;
+  }
+  
+
+  .sidebar-title h3{
+    color: rgb(84, 81, 81);
+  }
+  
+
+  .sidebar-list {
+    padding: 0;
+    list-style-type: none;
+    margin-top: 10px;
+  }
+  
+
+  .sidebar-list-item {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    font-size: 18px;
+  }
+  
+
+.dwn {
+    margin-top: 200px;
+}
+
+  .sidebar-list-item:hover {
+    background-color: rgb(194,157,89);
+    cursor: pointer;
+  }
+  
+  .sidebar-list-item > a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.769);
+  }
+
+  Link{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.769);
+  }
+
+  
+  .sidebar-responsive {
+    display: inline ;
+    position: absolute;
+    z-index: 12 ;
+  }
+
+  
+
+  /* End Sidebar  */
+
+
+
+ /*======================================== */
+ 
+ .sidebar-right-side{
+    display: flex;
+    flex-direction: column;
+    margin-left: 160px;
+    /* background-color: rgb(154, 88, 7); */
+    padding-bottom: 20px;
+ }
+
+  .total-booking{
+    padding: 40px; 
+  }
+
+  .total-booking span{
+     padding: 60px;
+     font-size: 25px;
+  }
+
+
+    /*table*/
+
+.dele-btn {
+    color: rgb(219, 219, 3);
+}
+
+.edt-btn {
+    margin-left: 10px;
+    color: rgb(11, 202, 11);
+}
+
+.Add-tour-btn {
+    margin-top: 10px;
+    width: 150px;
+    height: 40px;
+    color: white;
+    background-color: rgb(154, 88, 7);
+    margin-left: 85%;
+    cursor: pointer;
+}
+
+.table {
+  align-items: center;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: #f5f5f5;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.table th,.table td {
+  padding: 15px;
+}
+
+/* Style the table header */
+.table th {
+  color:  #fcb206;
+}
+
+.table tbody  tr {
+    cursor: pointer;
+}
+
+ /*       ========================= */
