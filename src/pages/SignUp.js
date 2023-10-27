@@ -5,6 +5,8 @@ import axios from "axios";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Sign = () => {
   const navigate = useNavigate();
@@ -26,10 +28,10 @@ const Sign = () => {
       .then((Response) => {
         localStorage.setItem("token", Response.data.access_token);
         navigate("/dashboard");
-        alert("registered succesfully");
+        toast.success("User registered succesfully");
       })
       .catch((error) => {
-        alert("Error Occured");
+        toast.error("Error Occured");
       });
   };
 
@@ -82,17 +84,6 @@ const Sign = () => {
           />
         </div>
 
-        {/* <div className="flex-column">
-          <label> Verify Password </label>
-        </div>
-        <div className="sl-inputForm">
-          <input
-            type="password"
-            className="sl-input"
-            placeholder="Enter as it is above"
-          />
-        </div> */}
-
         <button onClick={(e) => handleSignup(e)} className="sl-button-submit">
           SIGN UP
         </button>
@@ -111,6 +102,7 @@ const Sign = () => {
       <div className="spic-side">
         <img src="woman-png.png" alt="" />
       </div>
+      <ToastContainer />
     </div>
   );
 };

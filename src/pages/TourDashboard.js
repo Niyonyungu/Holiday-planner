@@ -1,15 +1,52 @@
-import React from "react";
-import { BsFillPencilFill } from "react-icons/bs";
-import { BsFillTrashFill } from "react-icons/bs";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs";
+import "../styles/Dashboard.css";
+import { Link } from "react-router-dom";
 
 const TourDashboard = () => {
+  const [tableData, setTableData] = useState([]);
+  const [isfetch, setIsFetch] = useState(false);
+
+  let token = localStorage.getItem("token");
+  const fetchTours = () => {
+    setIsFetch(true);
+    axios({
+      method: "GET",
+      url: "https://holiday-planner-4lnj.onrender.com/api/v1/tour",
+      headers: {
+        Authorization: `bearer ${token}`,
+      },
+    })
+      .then((Response) => {
+        setTableData(Response.data);
+        setIsFetch(false);
+        console.log(Response);
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("error found");
+      });
+  };
+
+  useEffect(() => {
+    fetchTours();
+  }, []);
+
+  const handleDeleteRow = (targetIndex) => {
+    setTableData(tableData.filter((_, idx) => idx !== targetIndex));
+  };
+
   return (
     <div className="sidebar-right-side">
-      <button className="Add-tour-btn">+ Add Tour</button>
+      <Link to="/dashboard/tourform">
+        <button className="Add-tour-btn">+ Add Tour</button>
+      </Link>
       <div className="table-component">
         <table class="table">
           <thead>
             <tr>
+              <th>Destination Image</th>
               <th>Destination</th>
               <th>Duration</th>
               <th>Group Size</th>
@@ -18,39 +55,34 @@ const TourDashboard = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Italy</td>
-              <td>$1300</td>
-              <td>Ullyse kabalisa</td>
-              <td>
-                <div className="action-icons">
-                  <BsFillTrashFill className="dele-btn" />
-                  <BsFillPencilFill className="edt-btn" />
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Greece</td>
-              <td>$1200</td>
-              <td>safaree pierre</td>
-              <td>
-                <div className="action-icons">
-                  <BsFillTrashFill className="dele-btn" />
-                  <BsFillPencilFill className="edt-btn" />
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>cicilly</td>
-              <td>$1000</td>
-              <td>jean de die sibo</td>
-              <td>
-                <div className="action-icons">
-                  <BsFillTrashFill className="dele-btn" />
-                  <BsFillPencilFill className="edt-btn" />
-                </div>
-              </td>
-            </tr>
+            {tableData.map((table, idx) => {
+              return (
+                <tr key={idx}>
+                  <td>
+                    <img
+                      src={table.backdropImage}
+                      alt="image"
+                      className="image-tour"
+                    />
+                  </td>
+                  <td>{table.destination}</td>
+                  <td>{table.duration}</td>
+                  <td>{table.GroupSize}</td>
+                  <td>{table.Price}</td>
+                  <td>
+                    <td>
+                      <span className="actions">
+                        <BsFillTrashFill
+                          className="delete-btn"
+                          onClick={() => handleDeleteRow(idx)}
+                        />
+                        <BsFillPencilFill className="edit-buttonn" />
+                      </span>
+                    </td>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>

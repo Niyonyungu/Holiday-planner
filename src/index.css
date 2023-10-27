@@ -138,45 +138,7 @@ align-items: center;
 
 /* Responsive styles for screens up to 425px */
 @media (max-width: 425px) {
-  .top-container {
-    flex-direction: column; /* Stack the elements vertically */
-  }
-
-  .lft,
-  .rgt {
-    flex-direction: column; /* Stack the items vertically */
-    justify-content: center; /* Center the items vertically */
-    align-items: center; /* Center the items horizontally */
-    gap: 5px; /* Reduce the gap between items */
-    margin: 10px 0; /* Adjust the margin */
-  }
-
-  .bottom-header-right {
-    padding-right: 10px; /* Adjust the padding */
-  }
-
-  .menu-icon {
-    margin-right: 10px; /* Adjust the margin */
-  }
  
-  .bottom-header img {
-    padding-left: 20px;
-    width: 50px;
-  }
-  .bottom-header-right {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .bottom-header-right button {
-    margin-top: 10px;
-  }
-  .menu-icon {
-    padding-right: 20px;
-  }  
-
-
-
 }
 
 

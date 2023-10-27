@@ -1,19 +1,16 @@
 import "../styles/Dashboard.css";
 import React from "react";
-import { SlCalender } from "react-icons/sl";
-import { BsChatSquareDots } from "react-icons/bs";
-import { LiaCampgroundSolid } from "react-icons/lia";
 import { PiAirplaneTiltThin } from "react-icons/pi";
-import { MdOutlineUpcoming } from "react-icons/md";
+import { BsJournalBookmarkFill } from "react-icons/bs";
 import { TbLayoutDashboard } from "react-icons/tb";
-import { MdPlace } from "react-icons/md";
 import { HiOutlineLogout } from "react-icons/hi";
+import { FaUsers } from "react-icons/fa";
 import emug from "../assets/mg.jpg";
 import { Link } from "react-router-dom";
 
 const SideBar = () => {
   return (
-    <aside id="sidebar" className="sidebar-responsive">
+    <aside className="sidebar">
       <div className="sidebar-title">
         <div className="photo-wrap">
           <img src={emug} alt="" />
@@ -35,12 +32,12 @@ const SideBar = () => {
 
         <li className="sidebar-list-item">
           <a href="">
-            <LiaCampgroundSolid className="icon" /> Bookings
+            <BsJournalBookmarkFill className="icon" /> Bookings
           </a>
         </li>
         <li className="sidebar-list-item">
           <a href="">
-            <SlCalender className="icon" /> Users
+            <FaUsers className="icon" /> Users
           </a>
         </li>
       </ul>

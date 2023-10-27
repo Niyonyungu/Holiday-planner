@@ -6,6 +6,8 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import React from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -25,11 +27,11 @@ const Login = () => {
       .then((Response) => {
         localStorage.setItem("token", Response.data.access_token);
         navigate("/dashboard");
-        alert("logged in succesfully");
+        toast.success("Logged in suceesfully");
       })
       .catch((error) => {
         console.log(error);
-        alert("user doesn't exist");
+        toast.error("user doesn't exist");
       });
   };
 
@@ -92,6 +94,7 @@ const Login = () => {
       <div className="pic-side">
         <img src="woman-png.png" alt="" />
       </div>
+      <ToastContainer />
     </div>
   );
 };

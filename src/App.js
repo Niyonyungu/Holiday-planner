@@ -12,6 +12,7 @@ import Dasboard from "./pages/Dashboard";
 import DashMain from "./components/DashMain";
 import TourDashboard from "./pages/TourDashboard";
 import Testimonials from "./components/Testimonials";
+import TourForm from "./pages/TourForm";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/dashboard" element={<Dasboard />}>
             <Route index element={<DashMain />} />
             <Route path="tourdashboard" element={<TourDashboard />} />
+            <Route path="tourform" element={<TourForm />} />
           </Route>
         </Routes>
       </BrowserRouter>
