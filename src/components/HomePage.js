@@ -4,7 +4,7 @@ import { ImLocation } from "react-icons/im";
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaFlag } from "react-icons/fa";
 import About from "./AboutUs";
-import Testimonials from "./Testimonials";
+
 const Homepage = () => {
   return (
     <div>
@@ -45,7 +45,6 @@ const Homepage = () => {
         <button>FIND NOW</button>
       </div>
       <About />
-      <Testimonials />
     </div>
   );
 };

@@ -9,6 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Sign = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const [fullNames, setFullNames] = useState("");
   const [email, setEmail] = useState("");
@@ -16,6 +17,7 @@ const Sign = () => {
 
   const handleSignup = (e) => {
     e.preventDefault();
+    setIsLoading(true);
     axios({
       method: "POST",
       url: "https://holiday-planner-4lnj.onrender.com/api/v1/auth/signup",
@@ -29,6 +31,7 @@ const Sign = () => {
         localStorage.setItem("token", Response.data.access_token);
         navigate("/dashboard");
         toast.success("User registered succesfully");
+        setIsLoading(false);
       })
       .catch((error) => {
         toast.error("Error Occured");
@@ -85,7 +88,7 @@ const Sign = () => {
         </div>
 
         <button onClick={(e) => handleSignup(e)} className="sl-button-submit">
-          SIGN UP
+          {isLoading ? "signing you up..." : "SIGN UP"}
         </button>
 
         <div className="flex-row">

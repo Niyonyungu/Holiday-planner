@@ -11,8 +11,8 @@ import TourDetail from "./pages/TourDetails";
 import Dasboard from "./pages/Dashboard";
 import DashMain from "./components/DashMain";
 import TourDashboard from "./pages/TourDashboard";
-import Testimonials from "./components/Testimonials";
 import TourForm from "./pages/TourForm";
+import EditTour from "./pages/EditTour";
 
 function App() {
   return (
@@ -32,6 +32,7 @@ function App() {
             <Route index element={<DashMain />} />
             <Route path="tourdashboard" element={<TourDashboard />} />
             <Route path="tourform" element={<TourForm />} />
+            <Route path="edittour/:id" element={<EditTour />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -2,15 +2,15 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs";
 import "../styles/Dashboard.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const TourDashboard = () => {
+  const navigate = useNavigate();
   const [tableData, setTableData] = useState([]);
-  const [isfetch, setIsFetch] = useState(false);
-
   let token = localStorage.getItem("token");
   const fetchTours = () => {
-    setIsFetch(true);
     axios({
       method: "GET",
       url: "https://holiday-planner-4lnj.onrender.com/api/v1/tour",
@@ -20,12 +20,11 @@ const TourDashboard = () => {
     })
       .then((Response) => {
         setTableData(Response.data);
-        setIsFetch(false);
         console.log(Response);
       })
       .catch((error) => {
         console.log(error);
-        alert("error found");
+        toast.error("error found");
       });
   };
 
@@ -33,8 +32,26 @@ const TourDashboard = () => {
     fetchTours();
   }, []);
 
-  const handleDeleteRow = (targetIndex) => {
-    setTableData(tableData.filter((_, idx) => idx !== targetIndex));
+  const handleDelete = (id) => {
+    if (window.confirm("Are you sure you want to delete This Tour ?")) {
+      let token = localStorage.getItem("token");
+      axios({
+        url: `https://holiday-planner-4lnj.onrender.com/api/v1/tour/deleteAll?fieldName=_id&value=${id}`,
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((response) => {
+          toast.success("tour deleted successfully");
+          navigate("/dashboard/tourdashboard");
+          console.log(response, "Response");
+        })
+        .catch((error) => {
+          toast.error(error.response.data.message);
+          console.log(error, "Error");
+        });
+    }
   };
 
   return (
@@ -55,9 +72,9 @@ const TourDashboard = () => {
             </tr>
           </thead>
           <tbody>
-            {tableData.map((table, idx) => {
+            {tableData.map((table) => {
               return (
-                <tr key={idx}>
+                <tr>
                   <td>
                     <img
                       src={table.backdropImage}
@@ -74,9 +91,15 @@ const TourDashboard = () => {
                       <span className="actions">
                         <BsFillTrashFill
                           className="delete-btn"
-                          onClick={() => handleDeleteRow(idx)}
+                          onClick={() => handleDelete(table._id)}
                         />
-                        <BsFillPencilFill className="edit-buttonn" />
+
+                        <BsFillPencilFill
+                          className="edit-buttonn"
+                          onClick={() =>
+                            navigate(`/dashboard/edittour/${table._id}`)
+                          }
+                        />
                       </span>
                     </td>
                   </td>
@@ -86,6 +109,7 @@ const TourDashboard = () => {
           </tbody>
         </table>
       </div>
+      <ToastContainer />
     </div>
   );
 };

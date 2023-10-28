@@ -1,43 +1,74 @@
 import "../styles/TourForm.css";
 import React, { useState } from "react";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 
-const TourForm = () => {
+const EditTour = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const params = useParams();
+  let tourId = params.id;
   const [destinationImage, setDestinationImage] = useState();
   const [destination, setDestination] = useState();
   const [duration, setDuration] = useState();
   const [groupSize, setGroupSize] = useState();
   const [price, setPrice] = useState();
 
-  const submitTour = (e) => {
+  /*    ==============================      */
+  const fetchTour = () => {
+    let token = localStorage.getItem("token");
+    axios({
+      method: "GET",
+      url: `https://holiday-planner-4lnj.onrender.com/api/v1/tour/getElement?fieldName=_id&value=${tourId}`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => {
+        setDestinationImage(response?.data?.destinationImage);
+        setDestination(response?.data?.destination);
+        setDuration(response?.data?.duration);
+        setGroupSize(response?.data?.groupSize);
+        setPrice(response?.data?.price);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  useEffect(() => {
+    fetchTour();
+  }, []);
+  /*    ==============================      */
+
+  /*    ==============================      */
+  const submitNewTour = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    let data = new FormData();
-    data.append("backdropImage", destinationImage);
-    data.append("destination", destination);
-    data.append("Duration", duration);
-    data.append("GroupSize", groupSize);
-    data.append("Price", price);
+    let formdata = new FormData();
+    formdata.append("backdropImage", destinationImage);
+    formdata.append("destination", destination);
+    formdata.append("Duration", duration);
+    formdata.append("GroupSize", groupSize);
+    formdata.append("Price", price);
 
     let token = localStorage.getItem("token");
 
     axios({
-      method: "POST",
-      url: "https://holiday-planner-4lnj.onrender.com/api/v1/tour/create",
-      data: data,
+      method: "PUT",
+      url: `https://holiday-planner-4lnj.onrender.com/api/v1/tour/update/${tourId}`,
+      data: formdata,
       headers: {
-        Authorization: `Bearer ${token}`,
         "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${token}`,
       },
     })
       .then((Response) => {
         console.log(Response);
-        toast.success("Tour created");
+        toast.success(Response.data.message);
         setIsLoading(false);
         navigate("/dashboard/tourdashboard");
       })
@@ -46,15 +77,16 @@ const TourForm = () => {
         toast.error("Error occured");
       });
   };
+  /*    ======================================   */
 
   return (
     <form action="" className="addTourForm">
-      <label htmlFor=""> Destination Image</label>
+      <label htmlFor="">Destination Image</label>
       <input
         type="file"
         src=""
         alt=""
-        placeholder="Enter the image"
+        placeholder="Enter New image"
         className="file"
         onChange={(e) => {
           e.preventDefault();
@@ -65,7 +97,7 @@ const TourForm = () => {
       <label htmlFor="">Destination</label>
       <input
         type="text"
-        placeholder="mention your  destination"
+        placeholder="mention your New destination"
         onChange={(e) => {
           e.preventDefault();
           setDestination(e.target.value);
@@ -95,19 +127,19 @@ const TourForm = () => {
       <label htmlFor="">Price</label>
       <input
         type="number"
-        placeholder="price in dollar$"
+        placeholder="New price in dollar $"
         onChange={(e) => {
           e.preventDefault();
           setPrice(e.target.value);
         }}
       />
 
-      <button className="addTourbu" onClick={submitTour}>
-        {isLoading ? "Creating Tour..." : "Create Tour"}
+      <button className="addTourbu" onClick={submitNewTour}>
+        {isLoading ? "Submitting New Tour..." : "Submit New Tour"}
       </button>
       <ToastContainer />
     </form>
   );
 };
 
-export default TourForm;
+export default EditTour;
