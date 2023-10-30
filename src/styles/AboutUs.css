@@ -8,7 +8,7 @@
     padding-top: 30px;
   }
   .amafoto{
-    /* background-color: lightblue; */
+  
     width: 38%;
     height: 30rem;
     display: flex;
@@ -33,7 +33,7 @@
     z-index: 0;
   }
   .bugufi{
-    /* background-color: rgb(156, 68, 68); */
+  
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -51,8 +51,7 @@
     height: 2rem;
     display: flex;
     margin-right: 5px;
-    /* transform: rotate(90deg); */
-    /* font-size: 3rem; */
+   
   }
   .abouttitle{
     color: #C29D59;
@@ -64,7 +63,7 @@
     justify-content: flex-start;
     gap: 5px;
     color: #000;
-    /* font-size: 1.5rem; */
+   
   }
   .muriMake{
     color: gray
@@ -88,73 +87,46 @@
   
   
   /* Media queries */
-@media only screen and (max-width: 1200px) {
-  /* Tablets [601px -> 1200px] */
-  .amafoto {
-    width: 50%;
+
+  @media only screen and (max-width: 425px) {
+    .AboutUs {
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    .amafoto {
+      width: 100%;
+      /* height: auto; */
+      flex-direction: column;
+      /* align-items: center;
+      padding: 0;
+      margin-bottom: 20px; */
+    }
+  
+    .ifoto1 {
+      width: 100%;
+      height: auto;
+    }
+     .ifoto2{
+      margin-top: -300px;
+      margin-left: 180px;
+      height: auto;
+      width: 100%;
+    }
+  
+    .bugufi {
+      width: 100%;
+      margin-left: 0;
+      font-size: 16px;
+    }
+  
+    .abouttitle {
+      justify-content: center;
+    }
+  
+    .readMorebut {
+      width: 100%;
+      margin-top: 20px;
+    }
   }
 
-  .ifoto1 {
-    width: 100%;
-    height: auto;
-  }
-
-  .ifoto2 {
-    top: 10rem;
-    left: -8rem;
-    width: 12rem;
-    height: 7rem;
-  }
-
-  .bugufi {
-    width: 50%;
-    margin-left: 0;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  /* Big smartphones [426px -> 600px] */
-  .amafoto {
-    width: 70%;
-  }
-
-  .ifoto1 {
-    width: 100%;
-    height: auto;
-  }
-
-  .ifoto2 {
-    top: 8rem;
-    left: -6rem;
-    width: 10rem;
-    height: 6rem;
-  }
-
-  .bugufi {
-    width: 70%;
-  }
-}
-
-@media only screen and (max-width: 425px) {
-  /* Small smartphones [325px -> 425px] */
-  .amafoto {
-    width: 90%;
-  }
-
-  .ifoto1 {
-    width: 100%;
-    height: auto;
-  }
-
-  .ifoto2 {
-    top: 6rem;
-    left: -4rem;
-    width: 8rem;
-    height: 5rem;
-  }
-
-  .bugufi {
-    width: 90%;
-    font-size: 16px;
-  }
-}

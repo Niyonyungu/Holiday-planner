@@ -50,36 +50,7 @@
 }
 
   
-  @media only screen and (max-width: 1200px) {
-    /* Tablets [601px -> 1200px] */
-    .modal-container img {
-      margin-left: 20px;
-    }
-  }
-  
-  @media only screen and (max-width: 600px) {
-    /* Big smartphones [426px -> 600px] */
-    .modal-container img {
-      width: 300px;
-      height: auto;
-      margin-left: 20px;
-    }
-  
-    .menu-container {
-      margin-right: 0;
-    }
-  
-    .menu-container > ul {
-      margin-left: 10px;
-    }
-  
-    .menu-container ul li a {
-      font-size: 18px;
-    }
-  }
-  
   @media only screen and (max-width: 425px) {
-    /* Small smartphones [325px -> 425px] */
     .modal-container img {
       width: 200px;
       height: auto;

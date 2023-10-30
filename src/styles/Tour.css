@@ -70,7 +70,7 @@
     flex-direction: column;
 }
 
-.findd{
+.finddd{
     color: black;
     font-weight: 900;
     font-size: 20px;
@@ -98,7 +98,7 @@
     margin-bottom: 10px;
 }
 
-.srch-f{
+.srch-ff{
     position: absolute;
     color: rgb(194,157,89);
     margin-top: 52px;
@@ -106,7 +106,7 @@
    font-size: 20px;
 }
 
-.lct-f {
+.lct-ff {
     position: absolute;
     color: rgb(194,157,89);
     margin-top: 108px;
@@ -114,7 +114,7 @@
    font-size: 20px;
 }
 
-.cld-f{
+.cld-ff{
     position: absolute;
     color: rgb(194,157,89);
     margin-top: 165px;
@@ -139,7 +139,6 @@ input[type="checkbox"] {
     cursor: pointer;
     vertical-align: middle;
     cursor: pointer;
- 
     position: absolute;
     top: 0;
     left: 0;
@@ -166,7 +165,7 @@ vertical-align: middle;
 /* ---------------------------------- */
 
 
-.quest-topp {
+.quest-toppu {
     background-color: rgb(246,246,246);
     box-shadow: 0 0 5px rgba(15, 1, 1, 0.9);
     margin-left: 60px;
@@ -247,30 +246,19 @@ margin-bottom: 15px;
 /*===============  ============= TOUR LEFT  =============  =================*/
 
 
-/*===============  ============= TOUR LEFT  =============  =================*/
-
-
-/*===============  ============= TOUR LEFT  =============  =================*/
-
-
 .tour-left{ 
-    width: 60%;
- 
+    width: 60%; 
     display: flex;
-    flex-direction: column;
-   
+    flex-direction: column;  
 }
 
 .tourCards{
-   
     width: 100%;
- 
     margin: 10px auto;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-  
     flex-wrap: wrap;
   }
   .tourCard{
@@ -306,39 +294,31 @@ margin-bottom: 15px;
   }
   
   .cardDescription{
-  
-
     width: 100%;
     height: 19rem;
     padding: 1rem;
     border-left: 3px solid #C29D59;
-
-
   }
   .tourCards p{
     font-size: 17px;
     font-weight: 600;
     padding-bottom: 5px;
-  
   }
   .descri .descr{
     color: #5e5a5a;
     font-weight: lighter;
   }
-  .time-size{
-   
+  .time-size{ 
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     gap: 6rem;
     height: 4rem;
-    padding-top: 2rem;
-    
+    padding-top: 2rem;  
     border-top: 1px solid #e4d8d8da;
     border-bottom: 1px solid #e4d8d8da
   }
-  .duration{
-   
+  .duration{ 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -346,10 +326,8 @@ margin-bottom: 15px;
   }
   .duration h3{
     display: flex;
-
   }
   .groupSize{ 
-  
     width: 10rem;
     display: flex;
     flex-direction: column;
@@ -364,7 +342,6 @@ margin-bottom: 15px;
     margin-left: 8px;
   }
   .footcards{
-    
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -401,9 +378,120 @@ margin-bottom: 15px;
   .footcards p {
     margin-top: 12px;
   }
-/*===============  ============= TOUR LEFT  =============  =================*/
 
 
 
+@media only screen and (max-width: 425px) {
+
+  .tour-btm{
+    display: flex;
+    flex-direction: column;
+  }
+
+    .tour-head h1 {
+        font-size: 25px;
+        margin-top: 150px;
+    }
+
+    .country {
+        left: 0.5rem;
+        width: 150px;
+    }
+
+    .cardDescription {
+        height: auto;
+    }
+
+    .time-size {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        height: auto;
+    }
+    .quest-toppu {    
+     width: 350px;
+     margin-left: 0;
+     margin-right: 0;
+      margin-top: 38px;
+  }
+  .questt-t {
+    background-color: rgb(194,157,89);
+    margin-top: 35px;
+    padding: 35px;
+    width: 350px;
+    margin-right: 0;
+    margin-left: 0;
+    box-shadow: 0 0 5px rgba(15, 1, 1, 0.9);
+}
+    .footcards p {
+      margin-right: 12px;
+    }
+    .sort-form {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+  }
+  .sort-form p{
+     height: 43px;
+     width: 348px;
+      border: 1px solid gray ;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: aliceblue;
+  }
+  
+  .sort-form select{
+      height: 43px;
+      width: 348px;
+      border: 1px solid gray ;
+      border-radius:0 ;
+      background-color: aliceblue;
+      outline: none;
+  }
+
+  .right-form{
+    margin-top: 10px;
+    display: flex;
+    padding-right: 300px;
+    flex-direction: column;
+    margin-left: 0; 
+}
+.tourCard{
+  width: 350px;
+  margin-left: 0;
+  height: auto;
+}
+
+.tourCards{
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 
+.finddd{
+  color: black;
+  font-weight: 900;
+  font-size: 20px;
+  border-left: 3px solid rgb(194,157,89);
+  padding-left: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.srch-ff{
+  margin-top: 98px;
+}
+
+.lct-ff {
+  margin-top: 150px;
+}
+
+.cld-ff{
+  margin-top: 200px;
+}
+
+}

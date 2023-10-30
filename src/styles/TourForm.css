@@ -21,7 +21,7 @@
     font-family: Arial, Helvetica, sans-serif;
   }
   .addTourForm label{
-    /* background-color: #ddb66d; */
+   
     font-weight: bolder;
     width: 50%;
     height: 2rem;
@@ -32,7 +32,7 @@
     padding-left: 15px;
   }
   .addTourForm input{
-    /* background-color: #ddb66d; */
+   
     width: 50%;
     height: 4rem;
     border-radius: 10px;
@@ -60,4 +60,34 @@
     cursor: pointer;
   }
   
+  @media only screen and (max-width: 425px) {
+    .addTourForm {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 320px;
+      height: 600px;
+      padding-bottom: 50px;
+      margin-bottom: 50px;
+      position: absolute;
+    }
   
+    .addTourForm label {
+      width: 80%;
+      font-size: 14px;
+      padding-left: 10px;
+    }
+  
+    .addTourForm input{
+      width: 80%;
+      height: 3rem;
+      font-size: 14px;
+      padding-left: 5px;
+    }
+  
+    .addTourbu {
+      width: 80%;
+      font-size: 14px;
+      height: 2.5rem;
+    }
+  }

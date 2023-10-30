@@ -59,6 +59,7 @@ const TourDashboard = () => {
       <Link to="/dashboard/tourform">
         <button className="Add-tour-btn">+ Add Tour</button>
       </Link>
+
       <div className="table-component">
         <table class="table">
           <thead>

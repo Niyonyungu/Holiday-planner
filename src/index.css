@@ -1,8 +1,6 @@
 body{
   background: rgba(63, 55, 55, 0.329);
-  scroll-behavior:smooth;
 }
-
 .top-header {
   background: black;
   height: 80px;  
@@ -20,8 +18,6 @@ body{
   gap: 10px;
   margin-left: 90px;
 }
-
-
 .lft i {
   color: rgb(194,157,89);
   font-family: "Font Awesome 5 Free";
@@ -43,7 +39,6 @@ body{
   flex-direction: row;
   margin-right: 90px;
 }
-
 .rgt i {
   color: rgb(194,157,89);
   font-family: "Font Awesome 5 Free";
@@ -53,11 +48,9 @@ body{
   width: 30px;
   cursor: pointer;
 }
-
 .rgt i :hover {
   color: aliceblue;
 }
-
 .bottom-header{
   background: white;
   display: flex;
@@ -68,11 +61,9 @@ body{
   justify-content: space-between;
   padding-right: 40px;
 }
-
 .bottom-header img{
   padding-left: 40px;
 }
-
 .bottom-header-right{
 display: flex;
 flex-direction: row;
@@ -80,9 +71,7 @@ justify-content: space-between;
 gap: 20px;
 align-content: center;
 align-items: center;
-
 }
-
 .bottom-header-right i {
   color: rgb(0, 0, 0);
   font-weight: 900;
@@ -98,9 +87,6 @@ align-items: center;
   border: 0;
   cursor: pointer;
 }
-
-
-
 .menu-icon {
   width: 30px;
   height: 20px;
@@ -110,103 +96,43 @@ align-items: center;
   justify-content: space-between;
 
 }
-
-
-
 .bar {
   width: 100%;
   height: 4px;
   background-color: rgb(194,157,89);
 }
 
-
-@media only screen and (max-width: 1200px) {
-  /* Tablets [601px -> 1200px] */
-  .lft,
-  .rgt {
-    margin: 0;
-  }
-  
-  .lft {
-    justify-content: center;
-    margin-left: 0;
-  }
-  
-  .rgt {
-    justify-content: center;
-    margin-right: 0;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  /* Big smartphones [426px -> 600px] */
-  .lft,
-  .rgt {
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    margin: 0;
-  }
-  
-  .lft h2,
-  .rgt i {
-    font-size: 16px;
-  }
-  
-  .bottom-header img {
-    padding-left: 20px;
-  }
-  
-  .bottom-header-right {
-    padding-right: 20px;
-  }
-  
-  .bottom-header-right button {
-    padding: 5px;
-  }
-}
-
 @media only screen and (max-width: 425px) {
-  /* Small smartphones [325px -> 425px] */
+  .top-header {
+    height: auto;
+  }
   .top-container {
     flex-direction: column;
     align-items: center;
-    gap: 10px;
   }
-  
   .lft,
   .rgt {
-    flex-direction: column;
     justify-content: center;
+  }
+  .lft {
+    margin-left: 2px;
+    flex-direction: column;
     align-items: center;
-    gap: 5px;
-    margin: 0;
+    gap: 1px;
   }
-  
-  .lft h2,
-  .rgt i {
-    font-size: 14px;
+  .rgt {
+    margin-right: 0;
   }
-  
   .bottom-header {
-    padding-right: 20px;
+    padding: 0 20px;
   }
-  
+  .bottom-header img {
+    padding-left: 0;
+    width: 100px;
+    height: auto;
+  }
   .bottom-header-right {
     gap: 10px;
   }
-  
-  .bottom-header-right button {
-    padding: 5px;
-    font-size: 12px;
-  }
-  
-  .menu-icon {
-    width: 25px;
-    height: 15px;
-  }
-  
-  .bar {
-    height: 3px;
-  }
+
 }

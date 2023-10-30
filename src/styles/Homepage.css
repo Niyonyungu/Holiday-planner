@@ -151,8 +151,7 @@ select{
     }
   }
   
-  @media only screen and (max-width: 600px) {
-    /* Big smartphones [426px -> 600px] */
+  @media only screen and (max-width: 425px) {
     .hometop {
       height: 300px;
       padding-top: 30px;
@@ -163,94 +162,46 @@ select{
     }
   
     .hometop p {
-      font-size: 15px;
+      font-size: 16px;
+    }
+  
+    .whereto {
+      height: auto;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
     }
   
     .whereto input {
-      width: 120px;
-      height: 25px;
-      margin-left: 20px;
+      width: 370px;
+      margin-left: 0;
+      height: 39px;
     }
   
     .whereto button {
-      height: 25px;
-      margin-right: 20px;
-      padding: 5px;
-      width: 120px;
+      width: 100%;
+      margin-right: 0;
     }
   
     .whereto select {
-      height: 25px;
-      width: 170px;
+      width: 100%;
     }
   
     .wrap span {
-      font-size: 15px;
-      margin-left: 23px;
-      margin-top: 4px;
+      margin-left: 0;
+      margin-top: 5px;
     }
-  
-    .caalnd {
-      font-size: 12px;
-      margin-left: 150px;
-      margin-top: 12px;
+
+    .caalnd{
+      margin-right: 525px;
+      margin-top: 57px;
     }
-  
-    .tlv {
-      font-size: 15px;
-      margin-left: 300px;
-      margin-top: 12px;
+    .tlv{
+      margin-right: 685px;
+      margin-top: 95px;
     }
-  }
-  
-  @media only screen and (max-width: 425px) {
-    /* Small smartphones [325px -> 425px] */
-    .hometop {
-      height: 250px;
-      padding-top: 20px;
-    }
-  
-    .hometop h1 {
-      font-size: 25px;
-    }
-  
-    .hometop p {
-      font-size: 12px;
-    }
-  
-    .whereto input {
-      width: 100px;
-      height: 20px;
-      margin-left: 15px;
-    }
-  
-    .whereto button {
-      height: 20px;
-      margin-right: 15px;
-      padding: 5px;
-      width: 100px;
-    }
-  
-    .whereto select {
-      height: 20px;
-      width: 150px;
-    }
-  
-    .wrap span {
-      font-size: 12px;
-      margin-left: 15px;
-      margin-top: 3px;
-    }
-  
-    .caalnd {
-      font-size: 10px;
-      margin-left: 100px;
-      margin-top: 10px;
-    }
-  
-    .tlv {
-      font-size: 12px;
-      margin-left: 200px;
-      margin-top: 10px;
+    .locationn{
+      margin-left: 7px;
+      margin-top: 5px;
     }
   }

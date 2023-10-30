@@ -21,7 +21,7 @@
     margin-top: 300px;
 }
 
-.tour-btm{
+.tour-btmo{
     background-color: aliceblue;
     padding: 20px;
     display: flex;
@@ -29,7 +29,7 @@
 }
 
 
-.tour-right {
+.tour-righht {
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -38,7 +38,7 @@
 
 
 
-.right-form{
+.right-formo{
     margin-right: 40px;
     margin-top: -80px;
     padding-left: 56px;
@@ -58,7 +58,7 @@
 
 
 
-.right-form input{
+.right-formo input{
     height: 43px;
     width: 280px;
     margin-bottom: 10px;
@@ -136,7 +136,7 @@ input[type="checkbox"] {
     cursor: pointer;
     vertical-align: middle;
     cursor: pointer;
-    /* margin-right: 10px; */
+
     position: absolute;
     top: 0;
     left: 0;
@@ -149,7 +149,7 @@ vertical-align: middle;
 }
 
 .boo{
-    /* margin-left: 50px; */
+   
     width: 280px;
 }
 .boo :hover{
@@ -198,7 +198,7 @@ margin-bottom: 15px;
 
 /* ---------------------------------- */
 
-.questt-t {
+.questt-tt {
     background-color: rgb(194,157,89);
     margin-top: 35px;
     padding: 35px;
@@ -239,18 +239,11 @@ margin-bottom: 15px;
 /*===============  ============= TOUR LEFT  =============  =================*/
 
 
-/*===============  ============= TOUR LEFT  =============  =================*/
-
-
-/*===============  ============= TOUR LEFT  =============  =================*/
-
-
-.tour-left{ 
+.tour-leftt{ 
     width: 60%;
-    /* background-color: rgba(35, 35, 222, 0.26); */
     display: flex;
     flex-direction: column;
-    /* padding: 10px; */
+
 }
 
 
@@ -260,13 +253,12 @@ margin-bottom: 15px;
     overflow: hidden;
     border: none;
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     padding-left: 0;
     list-style: none;
 }
 
-.tour-left ul {
+.tour-leftt ul {
     padding: 0;
     margin: 0;
 }
@@ -276,7 +268,7 @@ margin-bottom: 15px;
     flex: 1;
 }
 
-.tour-left li {
+.tour-leftt li {
     display: list-item;
 }
 
@@ -297,9 +289,6 @@ margin-bottom: 15px;
     cursor: pointer;
 }
 
-
-
-/* ==============================================  */
 /* ==============================================  */
 
 .tab-content .tab-pane {
@@ -357,8 +346,6 @@ margin-bottom: 15px;
 
 .tour-price-wp {
     text-align: right;
-    /* display: flex;
-    flex-direction: column; */
 }
 
 .tour-price {
@@ -503,8 +490,49 @@ margin-bottom: 15px;
 }
 
 
+@media only screen and (max-width: 425px){
+	
+.tour-btmo{
+    display: flex;
+    flex-direction: column;
+}
+.tour-leftt{ 
+    width: 100%;
+}
+
+.tour-leftt ul li {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tour-price {
+   margin-top: 20px;
+}
+
+.tour-short-info-box ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding-left: 13px;
+    gap: 10px;
+}
+
+.right-formo{
+    width: 310px;
+    margin-top: 15px;
+    padding-left: 15px;
+}
 
 
+.quest-topp {
+    margin-top: 38px;
+    padding: 30px;
+    width: 350px;
+    margin-left: 0;
+}
 
-
-/*===============  ============= TOUR LEFT  =============  ================= */
+.questt-tt {
+    width: 350px;
+    margin-left: 0;
+} 
+}

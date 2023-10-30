@@ -29,11 +29,12 @@ const EditTour = () => {
       },
     })
       .then((response) => {
-        setDestinationImage(response?.data?.destinationImage);
+        setDestinationImage(response?.data?.backdropImage);
         setDestination(response?.data?.destination);
-        setDuration(response?.data?.duration);
-        setGroupSize(response?.data?.groupSize);
-        setPrice(response?.data?.price);
+        setDuration(response?.data?.Duration);
+        setGroupSize(response?.data?.GroupSize);
+        setPrice(response?.data?.Price);
+        console.log(response);
       })
       .catch((error) => {
         console.log(error);
@@ -96,6 +97,7 @@ const EditTour = () => {
 
       <label htmlFor="">Destination</label>
       <input
+        value={destination}
         type="text"
         placeholder="mention your New destination"
         onChange={(e) => {
@@ -106,6 +108,7 @@ const EditTour = () => {
 
       <label htmlFor="">Duration</label>
       <input
+        value={duration}
         type="text"
         placeholder="how long will you stay ?"
         onChange={(e) => {
@@ -116,6 +119,7 @@ const EditTour = () => {
 
       <label htmlFor="">Group size</label>
       <input
+        value={groupSize}
         type="text"
         placeholder="let us know number of people"
         onChange={(e) => {
@@ -126,6 +130,7 @@ const EditTour = () => {
 
       <label htmlFor="">Price</label>
       <input
+        value={price}
         type="number"
         placeholder="New price in dollar $"
         onChange={(e) => {

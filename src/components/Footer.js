@@ -29,6 +29,9 @@ const Footer = () => {
             <li>Home</li>
             <li>About</li>
             <li>Contact us</li>
+            <li>Tour</li>
+            <li>Tour details</li>
+            <li>Login</li>
           </ul>
         </div>
         <div className="right">
@@ -84,7 +87,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      {/* <div className="line-ft"></div> */}
+      <div className="line-ft"></div>
       <div className="down">
         <div className="d-left">
           <p> Copyright © 2023 K-Lab. All Rights Reserved.</p>

@@ -10,7 +10,7 @@ const About = () => {
         <div>
           <span className="abouttitle">
             <span className="minusicon"></span>
-            {/* <AiOutlineMinus className='minusicon'/> */}
+
             <h3>About us</h3>
           </span>
           <span className="aboutSubtitle">

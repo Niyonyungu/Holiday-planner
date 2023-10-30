@@ -167,3 +167,13 @@
 .l-btn.google{
     color: rgb(203, 15, 15);
 }
+
+
+@media only screen and (max-width: 425px) {
+
+    .pic-side{
+       display: none;
+    }
+
+
+}

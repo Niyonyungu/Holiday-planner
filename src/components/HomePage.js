@@ -22,7 +22,7 @@ const Homepage = () => {
       <div className="whereto">
         <div className="wrap">
           <span>
-            <ImLocation />
+            <ImLocation className="locationn" />
           </span>
           <input type="text" placeholder="where To ?" />
         </div>

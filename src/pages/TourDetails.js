@@ -14,10 +14,8 @@ const Tourdetaills = () => {
         <div className="dtour-head">
           <h1> ITALY </h1>
         </div>
-        <div className="tour-btm">
-          <div className="tour-left">
-            {/* ==================================================== */}
-
+        <div className="tour-btmo">
+          <div className="tour-leftt">
             <ul className="nav nav-tabs wow ">
               <li className="nav-item">
                 <a className="nav-link active">
@@ -256,40 +254,14 @@ const Tourdetaills = () => {
                       </li>
                     </ul>
                   </div>
-                  {/* <div class="row no-gutters tour-gallery-slider slick-initialized slick-slider"><button class="slide-arrow prev-arrow slick-arrow" style=""><span>Prev</span></button>
-                                            
-                                            
-                                            
-                                            
-                                        <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 3050px; transform: translate3d(-1525px, 0px, 0px);"><div class="col-lg-4 p-0 slick-slide slick-cloned" tabindex="-1" style="width: 305px;" data-slick-index="-2" id="" aria-hidden="true">
-                                                <div class="tour-gallery-slide-image back-image" data-fancybox="" data-src="assets/images/tour-gallery-slide-image3.jpg" style="background-image: url(assets/images/tour-gallery-slide-image3.jpg);"></div>
-                                            </div><div class="col-lg-4 p-0 slick-slide slick-cloned" tabindex="-1" style="width: 305px;" data-slick-index="-1" id="" aria-hidden="true">
-                                                <div class="tour-gallery-slide-image back-image" data-fancybox="" data-src="assets/images/tour-gallery-slide-image4.jpg" style="background-image: url(assets/images/tour-gallery-slide-image4.jpg);"></div>
-                                            </div><div class="col-lg-4 p-0 slick-slide" tabindex="-1" style="width: 305px;" data-slick-index="0" aria-hidden="true">
-                                                <div class="tour-gallery-slide-image back-image" data-fancybox="" data-src="assets/images/tour-gallery-slide-image1.jpg" style="background-image: url(assets/images/tour-gallery-slide-image1.jpg);"></div>
-                                            </div><div class="col-lg-4 p-0 slick-slide" tabindex="-1" style="width: 305px;" data-slick-index="1" aria-hidden="true">
-                                                <div class="tour-gallery-slide-image back-image" data-fancybox="" data-src="assets/images/tour-gallery-slide-image2.jpg" style="background-image: url(assets/images/tour-gallery-slide-image2.jpg);"></div>
-                                            </div><div class="col-lg-4 p-0 slick-slide" tabindex="-1" style="width: 305px;" data-slick-index="2" aria-hidden="true">
-                                                <div class="tour-gallery-slide-image back-image" data-fancybox="" data-src="assets/images/tour-gallery-slide-image3.jpg" style="background-image: url(assets/images/tour-gallery-slide-image3.jpg);"></div>
-                                            </div><div class="col-lg-4 p-0 slick-slide slick-current slick-active" tabindex="0" style="width: 305px;" data-slick-index="3" aria-hidden="false">
-                                                <div class="tour-gallery-slide-image back-image" data-fancybox="" data-src="assets/images/tour-gallery-slide-image4.jpg" style="background-image: url(assets/images/tour-gallery-slide-image4.jpg);"></div>
-                                            </div><div class="col-lg-4 p-0 slick-slide slick-cloned slick-active" tabindex="-1" style="width: 305px;" data-slick-index="4" id="" aria-hidden="false">
-                                                <div class="tour-gallery-slide-image back-image" data-fancybox="" data-src="assets/images/tour-gallery-slide-image1.jpg" style="background-image: url(assets/images/tour-gallery-slide-image1.jpg);"></div>
-                                            </div><div class="col-lg-4 p-0 slick-slide slick-cloned" tabindex="-1" style="width: 305px;" data-slick-index="5" id="" aria-hidden="true">
-                                                <div class="tour-gallery-slide-image back-image" data-fancybox="" data-src="assets/images/tour-gallery-slide-image2.jpg" style="background-image: url(assets/images/tour-gallery-slide-image2.jpg);"></div>
-                                            </div><div class="col-lg-4 p-0 slick-slide slick-cloned" tabindex="-1" style="width: 305px;" data-slick-index="6" id="" aria-hidden="true">
-                                                <div class="tour-gallery-slide-image back-image" data-fancybox="" data-src="assets/images/tour-gallery-slide-image3.jpg" style="background-image: url(assets/images/tour-gallery-slide-image3.jpg);"></div>
-                                            </div><div class="col-lg-4 p-0 slick-slide slick-cloned" tabindex="-1" style="width: 305px;" data-slick-index="7" id="" aria-hidden="true">
-                                                <div class="tour-gallery-slide-image back-image" data-fancybox="" data-src="assets/images/tour-gallery-slide-image4.jpg" style="background-image: url(assets/images/tour-gallery-slide-image4.jpg);"></div>
-                                            </div></div></div><button class="slide-arrow next-arrow slick-arrow" style=""><span>Next</span></button></div> */}
                 </div>
               </div>
             </div>
 
             {/* ==================================================== */}
           </div>
-          <div className="tour-right">
-            <form action="" className="right-form">
+          <div className="tour-righht">
+            <form action="" className="right-formo">
               <label htmlFor="" className="findd">
                 BOOK THIS TOUR
               </label>
@@ -342,7 +314,7 @@ const Tourdetaills = () => {
             </div>
 
             <div className="quest-btm">
-              <div className="questt-t">
+              <div className="questt-tt">
                 <div className="questt-top-tite">
                   <h1>GOT A QUESTION ?</h1>
                   <p>
