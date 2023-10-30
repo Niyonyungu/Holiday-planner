@@ -25,7 +25,7 @@ const Navbar = () => {
               <i>
                 <TfiEmail />
               </i>
-              <h2> Holidayplaners@gmail.com</h2>
+              <h2> Holiidayplaners@gmail.com</h2>
               <span></span>
               <br />
               <i>

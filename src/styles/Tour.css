@@ -37,7 +37,7 @@
 
 .sort-form {
     margin-top: 20px;
-    /* margin-left: 50px; */
+
     display: flex;
     /* background-color: red; */
     padding: 5px;
@@ -123,29 +123,7 @@
     margin-left: 7px;
    font-size: 20px;
 }
-/* .prix{
-    display: flex;
-    flex-direction: row;
-    background-color: red;
-    padding: 5px;
-    margin-right: 26px;
-}
 
-.prix input{
-    height: 43px;
-    width: 126px;
-}
-
-.min{
-    display: flex;
-    flex-direction: column;
-}
-
-.min label{
-    color: rgb(5, 1, 1);
-    font-weight: 900;
-    margin-bottom: 10px;
-} */
 
 .checkbox-item {
     padding-left: 40px;
@@ -163,7 +141,7 @@ input[type="checkbox"] {
     cursor: pointer;
     vertical-align: middle;
     cursor: pointer;
-    /* margin-right: 10px; */
+ 
     position: absolute;
     top: 0;
     left: 0;
@@ -279,16 +257,16 @@ margin-bottom: 15px;
 
 .tour-left{ 
     width: 60%;
-    /* background-color: rgba(35, 35, 222, 0.26); */
+ 
     display: flex;
     flex-direction: column;
-    /* padding: 10px; */
+   
 }
 
 .tourCards{
-    /* background-color: rgb(241, 63, 8); */
+   
     width: 100%;
-    /* height: 110rem; */
+ 
     margin: 10px auto;
     display: flex;
     flex-direction: row;
@@ -330,7 +308,7 @@ margin-bottom: 15px;
   }
   
   .cardDescription{
-    /* background-color: slateblue; */
+  
 
     width: 100%;
     height: 19rem;
@@ -343,14 +321,14 @@ margin-bottom: 15px;
     font-size: 17px;
     font-weight: 600;
     padding-bottom: 5px;
-    /* line-height: 1.5; */
+  
   }
   .descri .descr{
     color: #5e5a5a;
     font-weight: lighter;
   }
   .time-size{
-    /* background-color: blueviolet; */
+   
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -362,8 +340,7 @@ margin-bottom: 15px;
     border-bottom: 1px solid #e4d8d8da
   }
   .duration{
-    /* background-color: red; */
-    /* width: 10rem; */
+   
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -378,7 +355,7 @@ margin-bottom: 15px;
     width: 10rem;
     display: flex;
     flex-direction: column;
-    /* align-items: flex-end; */
+ 
   }
   .groupSize h3{
     display: flex;
@@ -421,10 +398,138 @@ margin-bottom: 15px;
     color: #C29D59;
     font-size: 1.5rem;
     margin-right: 5px;
-    /* padding-top: 10px; */
+ 
   }
 
   .footcards p {
     margin-top: 12px;
   }
 /*===============  ============= TOUR LEFT  =============  =================*/
+
+
+
+@media only screen and (max-width: 1200px) {
+  /* Tablets [601px -> 1200px] */
+  .tour-head h1 {
+      font-size: 40px;
+      margin-top: 200px;
+  }
+
+  .tour-right {
+      width: 30%;
+    
+  }
+
+
+  .tour-left {
+      width: 50%;
+  }
+
+  .tourCard {
+      width: 100%;
+  }
+
+  .country {
+      left: 1rem;
+  }
+
+  .tourCards {
+      flex-direction: column;
+      align-items: center;
+  }
+
+
+  .sort-form {
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+
+.right-form select{
+  width: 150px;
+}
+
+
+}
+
+@media only screen and (max-width: 600px) {
+  /* Big smartphones [426px -> 600px] */
+  .tour-head h1 {
+      font-size: 30px;
+      margin-top: 180px;
+  }
+
+  .right-form {
+      margin-right: 10px;
+  }
+
+  .tour-right {
+      width: 40%;
+  }
+
+  .tour-left {
+      width: 60%;
+  }
+
+  .tourCard {
+      width: 100%;
+  }
+
+  .country {
+      left: 0.5rem;
+  }
+
+  .cardDescription {
+      height: 17rem;
+  }
+
+  .time-size {
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+      height: auto;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  /* Small smartphones [325px -> 425px] */
+  .tour-head h1 {
+      font-size: 25px;
+      margin-top: 150px;
+  }
+
+  .right-form {
+      margin-right: 5px;
+  }
+
+  .tour-right {
+      width: 100%;
+  }
+
+  .tour-left {
+      width: 100%;
+  }
+
+  .tourCard {
+      width: 100%;
+      height: auto;
+  }
+
+  .country {
+      left: 0.5rem;
+  }
+
+  .cardDescription {
+      height: auto;
+  }
+
+  .time-size {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      height: auto;
+  }
+}

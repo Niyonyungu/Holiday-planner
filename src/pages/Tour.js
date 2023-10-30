@@ -141,17 +141,6 @@ const Tour = () => {
             <select name="" id="">
               <option value="">Any</option>
             </select>
-            {/* <div className="prix">
-              <div className="min">
-                <label htmlFor="">
-                  Min Price <input type="number" />
-                </label>
-              </div>
-              <div className="min">
-                <label htmlFor="">Max Price</label>
-                <input type="number" name="" id="" className="max-prix" />
-              </div>
-            </div> */}
 
             <div className="checkbox-item">
               <input type="checkbox" />

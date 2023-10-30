@@ -202,3 +202,132 @@ color: antiquewhite;
 .fcb :hover{
     color: antiquewhite;
 }
+
+
+@media only screen and (max-width: 1200px) {
+    /* Tablets [601px -> 1200px] */
+    .container {
+      flex-direction: column;
+    }
+  
+    .down {
+      flex-direction: column;
+    }
+  
+    .d-left {
+      margin-left: 20px;
+    }
+  
+    .d-right {
+      margin-right: 20px;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    /* Big smartphones [426px -> 600px] */
+    .left {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  
+    .middle {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  
+    .right {
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-right: 0;
+    }
+  
+    .right h1 {
+      margin-top: 20px;
+    }
+  
+    .part1 {
+      margin-top: 10px;
+    }
+  
+    .part-1-right h2 {
+      font-size: 16px;
+    }
+  
+    .part-1-right p {
+      font-size: 14px;
+    }
+  }
+  
+  @media only screen and (max-width: 425px) {
+    /* Small smartphones [325px -> 425px] */
+    .left {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  
+    .left img {
+      width: 200px;
+      height: auto;
+      padding-top: 5px;
+    }
+  
+    span input {
+      width: 180px;
+    }
+  
+    span button {
+      width: 80px;
+    }
+  
+    .middle {
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 10px;
+    }
+  
+    .middle h1 {
+      font-size: 18px;
+      margin-top: 5px;
+    }
+  
+    .right {
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-right: 0;
+    }
+  
+    .right h1 {
+      font-size: 18px;
+      margin-top: 15px;
+    }
+  
+    .part-1-right h2 {
+      font-size: 16px;
+    }
+  
+    .part-1-right p {
+      font-size: 14px;
+    }
+  
+    .line-ft {
+      width: 90%;
+    }
+  
+    .d-left p {
+      margin-left: 20px;
+      font-size: 12px;
+    }
+  
+    .d-right {
+      margin-right: 20px;
+    }
+  
+    .d-right ul li {
+      margin-right: 5px;
+      font-size: 12px;
+    }
+  
+    .yp {
+      padding-right: 2px;
+    }
+  }
