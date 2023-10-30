@@ -37,9 +37,7 @@
 
 .sort-form {
     margin-top: 20px;
-
     display: flex;
-    /* background-color: red; */
     padding: 5px;
 }
 .sort-form p{
@@ -272,7 +270,7 @@ margin-bottom: 15px;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    /* padding: 2rem; */
+  
     flex-wrap: wrap;
   }
   .tourCard{
@@ -351,7 +349,7 @@ margin-bottom: 15px;
 
   }
   .groupSize{ 
-    /* background-color: red; */
+  
     width: 10rem;
     display: flex;
     flex-direction: column;
@@ -366,7 +364,7 @@ margin-bottom: 15px;
     margin-left: 8px;
   }
   .footcards{
-    /* background-color: violet; */
+    
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -398,7 +396,6 @@ margin-bottom: 15px;
     color: #C29D59;
     font-size: 1.5rem;
     margin-right: 5px;
- 
   }
 
   .footcards p {
@@ -408,128 +405,5 @@ margin-bottom: 15px;
 
 
 
-@media only screen and (max-width: 1200px) {
-  /* Tablets [601px -> 1200px] */
-  .tour-head h1 {
-      font-size: 40px;
-      margin-top: 200px;
-  }
-
-  .tour-right {
-      width: 30%;
-    
-  }
 
 
-  .tour-left {
-      width: 50%;
-  }
-
-  .tourCard {
-      width: 100%;
-  }
-
-  .country {
-      left: 1rem;
-  }
-
-  .tourCards {
-      flex-direction: column;
-      align-items: center;
-  }
-
-
-  .sort-form {
-    margin-top: 20px;
-
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-}
-
-
-.right-form select{
-  width: 150px;
-}
-
-
-}
-
-@media only screen and (max-width: 600px) {
-  /* Big smartphones [426px -> 600px] */
-  .tour-head h1 {
-      font-size: 30px;
-      margin-top: 180px;
-  }
-
-  .right-form {
-      margin-right: 10px;
-  }
-
-  .tour-right {
-      width: 40%;
-  }
-
-  .tour-left {
-      width: 60%;
-  }
-
-  .tourCard {
-      width: 100%;
-  }
-
-  .country {
-      left: 0.5rem;
-  }
-
-  .cardDescription {
-      height: 17rem;
-  }
-
-  .time-size {
-      flex-direction: column;
-      align-items: center;
-      gap: 3rem;
-      height: auto;
-  }
-}
-
-@media only screen and (max-width: 425px) {
-  /* Small smartphones [325px -> 425px] */
-  .tour-head h1 {
-      font-size: 25px;
-      margin-top: 150px;
-  }
-
-  .right-form {
-      margin-right: 5px;
-  }
-
-  .tour-right {
-      width: 100%;
-  }
-
-  .tour-left {
-      width: 100%;
-  }
-
-  .tourCard {
-      width: 100%;
-      height: auto;
-  }
-
-  .country {
-      left: 0.5rem;
-  }
-
-  .cardDescription {
-      height: auto;
-  }
-
-  .time-size {
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-      height: auto;
-  }
-}

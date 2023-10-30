@@ -29,7 +29,7 @@ const Sign = () => {
     })
       .then((Response) => {
         localStorage.setItem("token", Response.data.access_token);
-        navigate("/dashboard");
+        navigate("/login");
         toast.success("User registered succesfully");
         setIsLoading(false);
       })

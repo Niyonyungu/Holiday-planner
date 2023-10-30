@@ -83,9 +83,9 @@ const TourDashboard = () => {
                     />
                   </td>
                   <td>{table.destination}</td>
-                  <td>{table.duration}</td>
+                  <td>{table.Duration}</td>
                   <td>{table.GroupSize}</td>
-                  <td>{table.Price}</td>
+                  <td>{table.Price} $</td>
                   <td>
                     <td>
                       <span className="actions">
