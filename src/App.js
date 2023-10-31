@@ -25,7 +25,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Sign />} />
-            <Route path="/tourdetail" element={<TourDetail />} />
+            <Route path="/tourdetail/:id" element={<TourDetail />} />
             <Route path="/tour" element={<Tour />} />
           </Route>
           <Route path="/dashboard" element={<Dasboard />}>

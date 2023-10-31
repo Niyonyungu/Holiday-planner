@@ -14,6 +14,8 @@ const EditTour = () => {
   let tourId = params.id;
   const [destinationImage, setDestinationImage] = useState();
   const [destination, setDestination] = useState();
+  const [title, setTitle] = useState();
+  const [description, setDescription] = useState();
   const [duration, setDuration] = useState();
   const [groupSize, setGroupSize] = useState();
   const [price, setPrice] = useState();
@@ -31,6 +33,8 @@ const EditTour = () => {
       .then((response) => {
         setDestinationImage(response?.data?.backdropImage);
         setDestination(response?.data?.destination);
+        setTitle(response?.data?.Title);
+        setDescription(response?.data?.Description);
         setDuration(response?.data?.Duration);
         setGroupSize(response?.data?.GroupSize);
         setPrice(response?.data?.Price);
@@ -51,7 +55,9 @@ const EditTour = () => {
     setIsLoading(true);
     let formdata = new FormData();
     formdata.append("backdropImage", destinationImage);
-    formdata.append("destination", destination);
+    formdata.append("Destination", destination);
+    formdata.append("Title", title);
+    formdata.append("Description", description);
     formdata.append("Duration", duration);
     formdata.append("GroupSize", groupSize);
     formdata.append("Price", price);
@@ -82,13 +88,14 @@ const EditTour = () => {
 
   return (
     <form action="" className="addTourForm">
+      <h4>EDIT</h4>
       <label htmlFor="">Destination Image</label>
       <input
         type="file"
         src=""
         alt=""
         placeholder="Enter New image"
-        className="file"
+        className="filee"
         onChange={(e) => {
           e.preventDefault();
           setDestinationImage(e.target.files[0]);
@@ -103,6 +110,28 @@ const EditTour = () => {
         onChange={(e) => {
           e.preventDefault();
           setDestination(e.target.value);
+        }}
+      />
+
+      <label htmlFor="">Title</label>
+      <input
+        value={title}
+        type="text"
+        placeholder="mention your New destination"
+        onChange={(e) => {
+          e.preventDefault();
+          setTitle(e.target.value);
+        }}
+      />
+
+      <label htmlFor="">Description</label>
+      <input
+        value={description}
+        type="text"
+        placeholder="mention your New destination"
+        onChange={(e) => {
+          e.preventDefault();
+          setDescription(e.target.value);
         }}
       />
 

@@ -10,6 +10,8 @@ const TourForm = () => {
   const navigate = useNavigate();
   const [destinationImage, setDestinationImage] = useState();
   const [destination, setDestination] = useState();
+  const [title, setTitle] = useState();
+  const [description, setDescription] = useState();
   const [duration, setDuration] = useState();
   const [groupSize, setGroupSize] = useState();
   const [price, setPrice] = useState();
@@ -19,7 +21,9 @@ const TourForm = () => {
     setIsLoading(true);
     let data = new FormData();
     data.append("backdropImage", destinationImage);
-    data.append("destination", destination);
+    data.append("Destination", destination);
+    data.append("Title", title);
+    data.append("Description", description);
     data.append("Duration", duration);
     data.append("GroupSize", groupSize);
     data.append("Price", price);
@@ -49,6 +53,7 @@ const TourForm = () => {
 
   return (
     <form action="" className="addTourForm">
+      <h4>ADD</h4>
       <label htmlFor=""> Destination Image</label>
       <input
         type="file"
@@ -69,6 +74,26 @@ const TourForm = () => {
         onChange={(e) => {
           e.preventDefault();
           setDestination(e.target.value);
+        }}
+      />
+
+      <label htmlFor="">Title</label>
+      <input
+        type="text"
+        placeholder="Put your Title"
+        onChange={(e) => {
+          e.preventDefault();
+          setTitle(e.target.value);
+        }}
+      />
+
+      <label htmlFor="">Description</label>
+      <input
+        type="text"
+        placeholder="Describe your  destination"
+        onChange={(e) => {
+          e.preventDefault();
+          setDescription(e.target.value);
         }}
       />
 

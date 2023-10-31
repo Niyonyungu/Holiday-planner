@@ -33,16 +33,16 @@ const SideBar = () => {
         </li>
 
         <li className="sidebar-list-item">
-          <a href="">
+          <Link>
             <BsJournalBookmarkFill className="icon" /> Bookings
             <BiChevronRight className="go" />
-          </a>
+          </Link>
         </li>
         <li className="sidebar-list-item">
-          <a href="">
+          <Link>
             <FaUsers className="icon" /> Users
             <BiChevronRight className="go" />
-          </a>
+          </Link>
         </li>
       </ul>
       <div className="sidebar-list-item dwn">

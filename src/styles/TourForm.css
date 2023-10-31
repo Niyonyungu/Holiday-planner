@@ -1,7 +1,9 @@
 .file{
-    padding-top: 10px;
+    padding:0;
 }
-
+.filee{
+ padding: 0;
+}
 .addTourForm{
     background-color: white;
     width: 60%;
@@ -19,6 +21,13 @@
     text-transform: capitalize;
     list-style-type: none;
     font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .addTourForm h4{
+    font-size: 25px;
+    background-color: rgb(241, 196, 16);
+    border-radius: 10px;
+    padding: 5px;
   }
   .addTourForm label{
    

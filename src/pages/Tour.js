@@ -10,54 +10,34 @@ import { BiTimeFive } from "react-icons/bi";
 import { MdGroup } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Tour = () => {
-  const [tourLists, setTourLists] = useState([
-    {
-      id: "1",
-      country: "Italy",
-      descriptionone:
-        "Holiday Planners is a World Leading Online Tour Booking Platform",
-      descriptiontwo:
-        "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,",
-      duration: "2 days",
-      groupsize: "6 people",
-      amount: "$1200",
-    },
-    {
-      id: "2",
-      country: "Greece",
-      descriptionone:
-        "Holiday Planners is a World Leading Online Tour Booking Platform",
-      descriptiontwo:
-        "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,",
-      duration: "4 days",
-      groupsize: "16 people",
-      amount: "$2000",
-    },
-    {
-      id: "3",
-      country: "Japan",
-      descriptionone:
-        "Holiday Planners is a World Leading Online Tour Booking Platform",
-      descriptiontwo:
-        "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,",
-      duration: "5 days",
-      groupsize: "12 people",
-      amount: "$2000",
-    },
-    {
-      id: "4",
-      country: "Rwanda",
-      descriptionone:
-        "Holiday Planners is a World Leading Online Tour Booking Platform",
-      descriptiontwo:
-        "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,",
-      duration: "1 day",
-      groupsize: "1 person",
-      amount: "$800",
-    },
-  ]);
+  const navigate = useNavigate();
+  const [tourLists, setTourLists] = useState([]);
+  let token = localStorage.getItem("token");
+  const fetchTourList = () => {
+    axios({
+      method: "GET",
+      url: "https://holiday-planner-4lnj.onrender.com/api/v1/tour",
+      headers: {
+        Authorization: `bearer ${token}`,
+      },
+    })
+      .then((Response) => {
+        setTourLists(Response.data);
+        console.log(Response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    fetchTourList();
+  }, []);
 
   return (
     <div>
@@ -86,12 +66,12 @@ const Tour = () => {
               {tourLists.map((tour) => {
                 return (
                   <div className="tourCard">
-                    <img src={houses} alt="" />
+                    <img src={tour.backdropImage} alt="" />
                     <div className="cardDescription">
-                      <div className="country">{tour.country}</div>
+                      <div className="country">{tour.destination}</div>
                       <div className="descri">
-                        <p>{tour.descriptionone}</p>
-                        <p className="descr">{tour.descriptiontwo}</p>
+                        <p>{tour.Title}</p>
+                        <p className="descr">{tour.Description}</p>
                       </div>
                       <div className="time-size">
                         <span className="duration">
@@ -99,21 +79,25 @@ const Tour = () => {
                             <BiTimeFive className="cardcons" />
                             Duration
                           </h3>
-                          <p className="smallp">{tour.duration} </p>
+                          <p className="smallp">{tour.Duration} </p>
                         </span>
                         <span className="groupSize">
                           <h3>
                             <MdGroup className="cardcons" />
                             Group Size
                           </h3>
-                          <p className="smallp">{tour.groupsize} </p>
+                          <p className="smallp">{tour.GroupSize} </p>
                         </span>
                       </div>
                       <div className="footcards">
-                        <p className="price">{tour.amount} </p>
-                        <Link to="/tourdetail" className="butCard">
+                        <p className="price">{tour.Price} $ </p>
+                        <button
+                          to="/tourdetail"
+                          className="butCard"
+                          onClick={() => navigate(`/tourdetail/${tour._id}`)}
+                        >
                           book now
-                        </Link>
+                        </button>
                       </div>
                     </div>
                   </div>

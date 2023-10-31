@@ -7,12 +7,60 @@ import { AiFillPhone } from "react-icons/ai";
 import { RiCalendar2Fill } from "react-icons/ri";
 import { FaUserTag } from "react-icons/fa";
 import video from "../assets/video.mp4";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 const Tourdetaills = () => {
+  const navigate = useNavigate();
+
+  const params = useParams();
+  let tourId = params.id;
+  const [destinationImage, setDestinationImage] = useState();
+  const [destination, setDestination] = useState();
+  const [title, setTitle] = useState();
+  const [description, setDescription] = useState();
+  const [duration, setDuration] = useState();
+  const [groupSize, setGroupSize] = useState();
+  const [price, setPrice] = useState();
+
+  /*    ==============================      */
+  const fetchTour = () => {
+    let token = localStorage.getItem("token");
+    axios({
+      method: "GET",
+      url: `https://holiday-planner-4lnj.onrender.com/api/v1/tour/getElement?fieldName=_id&value=${tourId}`,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => {
+        setDestinationImage(response?.data?.backdropImage);
+        setDestination(response?.data?.destination);
+        setTitle(response?.data?.Title);
+        setDescription(response?.data?.Description);
+        setDuration(response?.data?.Duration);
+        setGroupSize(response?.data?.GroupSize);
+        setPrice(response?.data?.Price);
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  useEffect(() => {
+    fetchTour();
+  }, []);
+
   return (
     <div>
       <div className="tour-ct">
-        <div className="dtour-head">
-          <h1> ITALY </h1>
+        <div
+          className="dtour-head"
+          style={{ backgroundImage: `url(${destinationImage})` }}
+        >
+          <h1>{destination}</h1>
         </div>
         <div className="tour-btmo">
           <div className="tour-leftt">
@@ -47,9 +95,7 @@ const Tourdetaills = () => {
                 </a>
               </li>
             </ul>
-
-            {/* ==================================================== */}
-
+            {/* ====================================================================== */}
             <div className="tab-content ">
               <div className="tab-pane ">
                 <div className="tab-box information-tab-box">
@@ -57,16 +103,13 @@ const Tourdetaills = () => {
                   <div className="row">
                     <div className="col-xl">
                       <div className="tour-title">
-                        <h2 className="h2-title">
-                          A wonderful serenity has taken possession of my entire
-                          soul
-                        </h2>
+                        <h2 className="h2-title">{title}</h2>
                       </div>
                     </div>
                     <div className="col-xl-3">
                       <div className="tour-price-wp">
                         <div className="tour-price">
-                          <h3 className="h3-title">$200</h3>
+                          <h3 className="h3-title">$ {price}</h3>
                           <p>Per Person</p>
                         </div>
                       </div>
@@ -76,14 +119,14 @@ const Tourdetaills = () => {
                     <ul>
                       <li>
                         <i className="fas fa-clock" aria-hidden="true"></i>
-                        <span className="text">2 days</span>
+                        <span className="text">{duration} Days</span>
                       </li>
                       <li>
                         <i
                           className="fas fa-user-friends"
                           aria-hidden="true"
                         ></i>
-                        <span className="text">6 People</span>
+                        <span className="text"> {groupSize}People</span>
                       </li>
                       <li>
                         <i className="fas fa-user-plus" aria-hidden="true"></i>
@@ -95,7 +138,7 @@ const Tourdetaills = () => {
                             className="fas fa-map-marker-alt"
                             aria-hidden="true"
                           ></i>
-                          <span className="text">Greece</span>
+                          <span className="text">{destination}</span>
                         </a>
                       </li>
                       <li>
@@ -107,7 +150,7 @@ const Tourdetaills = () => {
                     </ul>
                   </div>
                   <div className="tour-description">
-                    <p>
+                    {/* <p>
                       {" "}
                       I should be incapable of drawing a single stroke at the
                       present moment; and yet I feel that I never was a greater
@@ -131,7 +174,8 @@ const Tourdetaills = () => {
                       countless indescribable forms of the insects and flies,
                       then I feel the presence of the Almighty, who formed us in
                       his own image, and the breath
-                    </p>
+                    </p> */}
+                    {description}
                   </div>
                   <div className="tour-video">
                     <video
@@ -152,7 +196,7 @@ const Tourdetaills = () => {
                           <h4 className="h4-title">Destination</h4>
                         </div>
                         <div className="tts-description">
-                          <a href="#">Greece</a>
+                          <a href="#">{destination}</a>
                         </div>
                       </li>
                       <li>
