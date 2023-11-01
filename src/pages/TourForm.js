@@ -41,13 +41,15 @@ const TourForm = () => {
     })
       .then((Response) => {
         console.log(Response);
-        toast.success("Tour created");
+        toast.success("Tour created Succesfully");
         setIsLoading(false);
-        navigate("/dashboard/tourdashboard");
+        setTimeout(() => {
+          navigate("/dashboard/tourdashboard");
+        }, 2000);
       })
       .catch((error) => {
         console.log(error);
-        toast.error("Error occured");
+        toast.error(error.Response.data.message);
       });
   };
 

@@ -39,6 +39,13 @@ body{
   flex-direction: row;
   margin-right: 90px;
 }
+/* .rgt a{
+    text-decoration: none;
+    color: none;
+} */
+.fbb{
+  color: rgb(194,157,89);
+}
 .rgt i {
   color: rgb(194,157,89);
   font-family: "Font Awesome 5 Free";
@@ -78,13 +85,18 @@ align-items: center;
   padding-top: 11px;
   cursor: pointer;
 }
-.bottom-header-right button {
+.rsv{
   color: aliceblue;
   background: rgb(194,157,89);
-  padding: 9px;
+  padding: 12px 35px;
   border-radius: 5px;
   border: 0;
   cursor: pointer;
+  font-weight: 900;
+}
+
+.rsv:hover{
+  background-color: black;
 }
 .menu-icon {
   width: 30px;

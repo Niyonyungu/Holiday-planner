@@ -35,24 +35,33 @@ const Navbar = () => {
             </div>
             <div className="rgt">
               <i>
-                <SlSocialFacebook />
+                <a href="https://web.facebook.com/" target="_blank">
+                  <SlSocialFacebook className="fbb" />
+                </a>
               </i>
 
               <i>
-                <PiInstagramLogo />
+                <a href="https://www.instagram.com/" target="_blank">
+                  <PiInstagramLogo className="fbb" />
+                </a>
               </i>
 
               <i>
-                <SlSocialTwitter />
+                <a href="https://twitter.com/home" target="_blank">
+                  <SlSocialTwitter className="fbb" />
+                </a>
               </i>
             </div>
           </div>
         </div>
 
         <div className="bottom-header">
-          <img src="logo.png" alt="logo" />
+          <a href="/">
+            <img src="logo.png" alt="logo" />
+          </a>
+
           <div className="bottom-header-right">
-            <button>RESERVE</button>
+            <button className="rsv">RESERVE</button>
             <i>
               <HiOutlineSearchCircle />
             </i>

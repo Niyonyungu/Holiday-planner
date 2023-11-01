@@ -29,12 +29,15 @@ const Sign = () => {
     })
       .then((Response) => {
         localStorage.setItem("token", Response.data.access_token);
-        navigate("/login");
+        localStorage.setItem("user", JSON.stringify(Response.data.user));
         toast.success("User registered succesfully");
         setIsLoading(false);
+        setTimeout(() => {
+          navigate("/login");
+        }, 2000);
       })
       .catch((error) => {
-        toast.error("Error Occured");
+        toast.error(error.Response.data.message);
       });
   };
 

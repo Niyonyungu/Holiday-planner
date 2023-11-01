@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs";
 import "../styles/Dashboard.css";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
@@ -44,8 +44,10 @@ const TourDashboard = () => {
       })
         .then((response) => {
           toast.success("tour deleted successfully");
-          navigate("/dashboard/tourdashboard");
           console.log(response, "Response");
+          setTimeout(() => {
+            navigate("/dashboard/tourdashboard");
+          }, 2000);
         })
         .catch((error) => {
           toast.error(error.response.data.message);

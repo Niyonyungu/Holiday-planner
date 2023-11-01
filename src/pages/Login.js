@@ -28,9 +28,15 @@ const Login = () => {
     })
       .then((Response) => {
         localStorage.setItem("token", Response.data.access_token);
-        navigate("/dashboard");
         toast.success("Logged in sucesfully");
         setIsLoading(false);
+        setTimeout(() => {
+          if (Response.data.user.role === "admin") {
+            navigate("/dashboard");
+          } else {
+            navigate("/");
+          }
+        }, 2000);
       })
       .catch((error) => {
         console.log(error);

@@ -4,7 +4,7 @@
 }
 
 .dtour-head{
-    /* background-image: url(../assets/Italy.jpeg); */
+
     background-size: cover;
     background-attachment: fixed;
     height: 500px;   
@@ -334,6 +334,10 @@ margin-bottom: 15px;
 
 .tour-title {
     margin-bottom: 30px;
+    width: 450px; 
+    overflow-wrap: break-word; 
+    word-wrap: break-word; 
+    word-break: break-word;
 }
 
 .h2-title {
@@ -409,12 +413,11 @@ margin-bottom: 15px;
     text-decoration: none;
 }
 
-.tour-description p{
-    font-size: 16px;
-    line-height: 24px;
-    color: black;
-    margin-top: 0;
-    margin-bottom: 1rem;
+.tour-description {
+    width: 653px; 
+    overflow-wrap: break-word; 
+    word-wrap: break-word; 
+    word-break: break-word;
 }
 
 .tour-video {
