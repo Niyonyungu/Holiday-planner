@@ -21,7 +21,7 @@ const TourForm = () => {
     setIsLoading(true);
     let data = new FormData();
     data.append("backdropImage", destinationImage);
-    data.append("Destination", destination);
+    data.append("destination", destination);
     data.append("Title", title);
     data.append("Description", description);
     data.append("Duration", duration);

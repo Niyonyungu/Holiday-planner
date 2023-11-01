@@ -499,6 +499,22 @@ margin-bottom: 15px;
     display: flex;
     flex-direction: column;
 }
+.tour-description {
+    width: 255px; 
+    overflow-wrap: break-word; 
+    word-wrap: break-word; 
+    word-break: break-word;
+}
+
+.tour-title {
+    margin-bottom: 30px;
+    width: 250px; 
+    overflow-wrap: break-word; 
+    word-wrap: break-word; 
+    word-break: break-word;
+}
+
+
 .tour-leftt{ 
     width: 100%;
 }

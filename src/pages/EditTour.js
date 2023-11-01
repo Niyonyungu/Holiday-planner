@@ -55,7 +55,7 @@ const EditTour = () => {
     setIsLoading(true);
     let formdata = new FormData();
     formdata.append("backdropImage", destinationImage);
-    formdata.append("Destination", destination);
+    formdata.append("destination", destination);
     formdata.append("Title", title);
     formdata.append("Description", description);
     formdata.append("Duration", duration);
