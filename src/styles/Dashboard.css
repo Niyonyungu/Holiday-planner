@@ -3,7 +3,55 @@ body{
   background-color: #fff;
 }
 
-/* ----=======================================---*/
+/* ----==============STATS=========================---*/
+.stat-card{
+  margin: 0px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  gap: 15px;
+}
+.stats-container{
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.909);
+  border: 1px solid rgba(0, 0, 0, 0.669);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats-img{
+  width: 50%;
+  height: 5rem;
+}
+
+.stats-img img{
+  height: 5rem;
+  border-radius: 10px;
+}
+.stats-description{
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.stats-desc-title{
+  color: black;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.stats-desc-amount{
+  color: black;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  text-align: center;
+  font-weight: 700;
+}
+
 /* ----=======================================---*/
 /* ----=======================================---*/
 
@@ -15,6 +63,7 @@ body{
     align-items: center;
     justify-content: center; 
     height: 100vh;
+    padding-left: 120px;
 }
 
 
@@ -137,9 +186,6 @@ body{
     text-decoration: none;
     color: rgb(0, 0, 0);
   }
-
-
- 
  
  .sidebar-right-side{
     display: flex;
@@ -179,13 +225,8 @@ body{
  /*       ========================= */
 
 
- .table-wrapper{
-  width: 100%;
- 
-}
 
 .table{
-  
   overflow: hidden;
   table-layout: auto;
   border-collapse: collapse;
@@ -256,9 +297,7 @@ th{
   justify-content: flex-end;
 }
 
-.actions svg{
-  cursor: pointer;
-}
+
 
 .delete-btn{
   color: #e00902;
@@ -304,10 +343,6 @@ th{
   }
 /* ============*/
 
-  .table-wrapper {
-    overflow-x: auto;
-    max-width: 100%;
-  }
 
   .table {
     width: 100%;

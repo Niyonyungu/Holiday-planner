@@ -1,38 +1,38 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs";
-import "../styles/Users.css";
+import "../styles/Bookings.css";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-const Users = () => {
+const Bookings = () => {
   const navigate = useNavigate();
-  const [users, setUsers] = useState([]);
+  const [bookings, setBookings] = useState([]);
   let token = localStorage.getItem("token");
-  const fetchUsers = () => {
+  const fetchBookings = () => {
     axios({
       method: "GET",
-      url: "https://holiday-planner-4lnj.onrender.com/api/v1/auth/users",
+      url: "https://holiday-planner-4lnj.onrender.com/api/v1/booking/view",
       headers: {
         Authorization: `bearer ${token}`,
       },
     })
       .then((Response) => {
-        setUsers(Response.data);
+        setBookings(Response.data);
         console.log(Response);
       })
       .catch((error) => {
         console.log(error);
-        toast.error(Response.data.message);
+        toast.error(error.message);
       });
   };
 
   useEffect(() => {
-    fetchUsers();
+    fetchBookings();
   }, []);
 
-  const handleDeleteUser = (id) => {
-    if (window.confirm("Are you sure you want to delete This User ?")) {
+  const handleDeleteBook = (id) => {
+    if (window.confirm("Are you sure you want to delete This Booking ?")) {
       let token = localStorage.getItem("token");
       axios({
         url: `https://holiday-planner-4lnj.onrender.com/api/v1/auth/users/delete/${id}`,
@@ -45,7 +45,7 @@ const Users = () => {
           toast.success("User deleted successfully");
           console.log(response, "Response");
           setTimeout(() => {
-            navigate("/dashboard/users");
+            navigate("/dashboard/bookings");
           }, 2000);
         })
         .catch((error) => {
@@ -56,38 +56,40 @@ const Users = () => {
   };
 
   return (
-    <div className="sidebar-right-sidee">
+    <div className="sidebar-right-sideee">
       <div className="table-component">
         <table class="tablee">
           <thead>
             <tr>
-              <th>User Name</th>
-              <th>User Email</th>
-              <th>User Role</th>
-
+              <th> Name</th>
+              <th> Email</th>
+              <th> Phone</th>
+              <th> Date</th>
+              <th>Number Of Tickets</th>
               <th className="actionf">Action</th>
             </tr>
           </thead>
           <tbody>
-            {users.map((user) => {
+            {bookings.map((book) => {
               return (
                 <tr>
-                  <td>{user.fullName}</td>
-                  <td>{user.email}</td>
-                  <td>{user.role}</td>
-
+                  <td>{book.fullName}</td>
+                  <td>{book.email}</td>
+                  <td>{book.phone}</td>
+                  <td>{book.date}</td>
+                  <td>{book.tickets}</td>
                   <td>
                     <td>
                       <span className="actionss">
                         <BsFillTrashFill
                           className="delete-btns"
-                          onClick={() => handleDeleteUser(user._id)}
+                          onClick={() => handleDeleteBook(book._id)}
                         />
 
                         <BsFillPencilFill
                           className="edit-buttonns"
                           onClick={() =>
-                            navigate(`/dashboard/edituser/${user._id}`)
+                            navigate(`/dashboard/editbookings/${book._id}`)
                           }
                         />
                       </span>
@@ -104,4 +106,4 @@ const Users = () => {
   );
 };
 
-export default Users;
+export default Bookings;

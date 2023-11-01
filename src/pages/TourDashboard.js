@@ -24,7 +24,7 @@ const TourDashboard = () => {
       })
       .catch((error) => {
         console.log(error);
-        toast.error("error found");
+        toast.error(error.Response.data.message);
       });
   };
 

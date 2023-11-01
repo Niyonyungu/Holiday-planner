@@ -14,6 +14,9 @@ import TourDashboard from "./pages/TourDashboard";
 import TourForm from "./pages/TourForm";
 import EditTour from "./pages/EditTour";
 import Users from "./pages/Users";
+import EditUser from "./pages/EditUser";
+import Bookings from "./pages/Bookings";
+import EditBookings from "./pages/EditBookings";
 
 function App() {
   return (
@@ -35,6 +38,9 @@ function App() {
             <Route path="users" element={<Users />} />
             <Route path="tourform" element={<TourForm />} />
             <Route path="edittour/:id" element={<EditTour />} />
+            <Route path="edituser/:id" element={<EditUser />} />
+            <Route path="bookings" element={<Bookings />} />
+            <Route path="editbookings" element={<EditBookings />} />
           </Route>
         </Routes>
       </BrowserRouter>

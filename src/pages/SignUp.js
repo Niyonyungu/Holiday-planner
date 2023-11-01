@@ -37,7 +37,7 @@ const Sign = () => {
         }, 2000);
       })
       .catch((error) => {
-        toast.error(error.Response.data.message);
+        toast.error(error.message);
       });
   };
 

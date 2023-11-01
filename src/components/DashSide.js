@@ -33,7 +33,7 @@ const SideBar = () => {
         </li>
 
         <li className="sidebar-list-item">
-          <Link>
+          <Link to="bookings">
             <BsJournalBookmarkFill className="icon" /> Bookings
             <BiChevronRight className="go" />
           </Link>

@@ -32,7 +32,7 @@ const TourForm = () => {
 
     axios({
       method: "POST",
-      url: "https://holiday-planner-4lnj.onrender.com/api/v1/tour/create",
+      url: "https://holiday-planner-4lnj.onrender.com/api/v1/auth/signup",
       data: data,
       headers: {
         Authorization: `Bearer ${token}`,
@@ -49,7 +49,7 @@ const TourForm = () => {
       })
       .catch((error) => {
         console.log(error);
-        toast.error(error.Response.data.message);
+        toast.error(error.message);
       });
   };
 
@@ -130,7 +130,7 @@ const TourForm = () => {
       />
 
       <button className="addTourbu" onClick={submitTour}>
-        {isLoading ? "Creating Tour..." : "Create Tour"}
+        {isLoading ? "Creating New Tour..." : "Create New Tour"}
       </button>
       <ToastContainer />
     </form>

@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/Dashboard.css";
+import StatsCard from "./StatsCard";
 
 import {
   Chart as ChartJS,
@@ -62,7 +63,14 @@ const DashMain = () => {
 
   return (
     <div className="dashboard-center">
-      <div>
+      <div className="stat-card">
+        <StatsCard title="Tours" amount="40" />
+        <StatsCard title="Booking" amount="200" />
+        <StatsCard title="users" amount="100" />
+      </div>
+
+      <div className="charts">
+        <Bar options={options} data={data} />
         <Bar options={options} data={data} />
       </div>
     </div>
