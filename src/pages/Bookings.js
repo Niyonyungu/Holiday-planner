@@ -48,7 +48,7 @@ const Bookings = () => {
         },
       })
         .then((response) => {
-          toast.success("User deleted successfully");
+          toast.success("Booking deleted successfully");
           console.log(response, "Response");
           setTimeout(() => {
             navigate("/dashboard/bookings");

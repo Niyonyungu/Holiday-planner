@@ -54,7 +54,7 @@ const EditUser = () => {
 
     axios({
       method: "PUT",
-      url: `https://holiday-planner-4lnj.onrender.com/api/v1/auth/users/update/${userEmail}`,
+      url: `https://holiday-planner-4lnj.onrender.com/api/v1/auth/users/update/${tourId}`,
       data: data,
       headers: {
         "Content-Type": "application/json",

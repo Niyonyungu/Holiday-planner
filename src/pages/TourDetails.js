@@ -42,7 +42,6 @@ const Tourdetaills = () => {
     data.append("numberOfTickets", bookFormTicketsNumber);
 
     let token = localStorage.getItem("token");
-
     console.log(token);
 
     axios({
