@@ -24,7 +24,7 @@ const TourDashboard = () => {
       })
       .catch((error) => {
         console.log(error);
-        toast.error(error.Response.data.message);
+        toast.error(error.message);
       });
   };
 
@@ -50,7 +50,7 @@ const TourDashboard = () => {
           }, 2000);
         })
         .catch((error) => {
-          toast.error(error.response.data.message);
+          toast.error(error.message);
           console.log(error, "Error");
         });
     }

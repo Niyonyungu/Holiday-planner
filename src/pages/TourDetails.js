@@ -11,7 +11,60 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
+
 const Tourdetaills = () => {
+  /*    ================BOOKING FORM FETCHING==============      */
+
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const [bookFormName, setBookFormName] = useState();
+  const [bookFormEmail, setBookFormEmail] = useState();
+  const [bookFormPhone, setBookFormPhone] = useState();
+  const [bookFormDate, setBookFormDate] = useState();
+  const [bookFormTicketsNumber, setBookFormTicketsNumber] = useState();
+
+  const submitBooking = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    let data = new FormData();
+    data.append("fullname", bookFormName);
+    data.append("email", bookFormEmail);
+    data.append("phone", bookFormPhone);
+    data.append("date", bookFormDate);
+    data.append("numberOfTickets", bookFormTicketsNumber);
+
+    let token = localStorage.getItem("token");
+
+    axios({
+      method: "POST",
+      url: "https://holiday-planner-4lnj.onrender.com/api/v1/booking/create",
+      data: data,
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "multipart/form-data",
+      },
+    })
+      .then((Response) => {
+        console.log(Response);
+        toast.success(Response.data.message);
+        setIsLoading(false);
+        setTimeout(() => {
+          navigate("/tour");
+        }, 2000);
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.error(error.message);
+      });
+  };
+
+  /*    ================ END BOOKING FORM FETCHING==============      */
+
+  /*    ===============TOUR DETAILS FETCHING===============      */
   const params = useParams();
   let tourId = params.id;
   const [destinationImage, setDestinationImage] = useState();
@@ -22,7 +75,6 @@ const Tourdetaills = () => {
   const [groupSize, setGroupSize] = useState();
   const [price, setPrice] = useState();
 
-  /*    ==============================      */
   const fetchTour = () => {
     let token = localStorage.getItem("token");
     axios({
@@ -46,9 +98,13 @@ const Tourdetaills = () => {
         console.log(error);
       });
   };
+
   useEffect(() => {
     fetchTour();
   }, []);
+
+  /*    ==============END TOUR DETAILS FETCHING================      */
+
   return (
     <div>
       <div className="tour-ct">
@@ -280,24 +336,61 @@ const Tourdetaills = () => {
               </label>
 
               <BsFillPersonFill className="srch-f" />
-              <input type="text" placeholder="Full Name*" />
+              <input
+                type="text"
+                placeholder="Full Name*"
+                onChange={(e) => {
+                  e.preventDefault();
+                  setBookFormName(e.target.value);
+                }}
+              />
 
               <MdEmail className="mal" />
-              <input type="email" placeholder=" Email*" />
+              <input
+                type="email"
+                placeholder=" Email*"
+                onChange={(e) => {
+                  e.preventDefault();
+                  setBookFormEmail(e.target.value);
+                }}
+              />
               <MdEmail className="mal2" />
               <input type="email" placeholder="Comfirm Email*" />
               <AiFillPhone className="pne" />
-              <input type="tel" placeholder="Phone*" />
+              <input
+                type="tel"
+                placeholder="Phone*"
+                onChange={(e) => {
+                  e.preventDefault();
+                  setBookFormPhone(e.target.value);
+                }}
+              />
               <RiCalendar2Fill className="clnd" />
-              <input type="date" />
+              <input
+                type="date"
+                onChange={(e) => {
+                  e.preventDefault();
+                  setBookFormDate(e.target.value);
+                }}
+              />
               <FaUserTag className="tper" />
-              <input type="number" placeholder="Number Of Tickets*" />
+              <input
+                type="number"
+                placeholder="Number Of Tickets*"
+                onChange={(e) => {
+                  e.preventDefault();
+                  setBookFormTicketsNumber(e.target.value);
+                }}
+              />
               <textarea className="txt-a" placeholder="message"></textarea>
               <div className="checkbox-item">
                 <input type="checkbox" />
                 <label>Check Availability</label>
               </div>
-              <button className="boo">BOOK NOW</button>
+              <button className="boo" onClick={submitBooking}>
+                {isLoading ? " Booking..." : "BOOK NOW"}
+              </button>
+              <ToastContainer />
             </form>
 
             <div className="quest-topp">

@@ -41,7 +41,7 @@ const TourForm = () => {
     })
       .then((Response) => {
         console.log(Response);
-        toast.success("Tour created Succesfully");
+        toast.success(Response.data.message);
         setIsLoading(false);
         setTimeout(() => {
           navigate("/dashboard/tourdashboard");

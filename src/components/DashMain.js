@@ -6,16 +6,19 @@ import {
   Chart as ChartJS,
   BarElement,
   CategoryScale,
+  ArcElement,
   LinearScale,
   Title,
   Tooltip,
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
+import { Pie } from "react-chartjs-2";
 ChartJS.register(
   BarElement,
   CategoryScale,
   LinearScale,
+  ArcElement,
   Title,
   Tooltip,
   Legend
@@ -30,7 +33,7 @@ const DashMain = () => {
       },
       title: {
         display: true,
-        text: "Tor Bookings",
+        text: "Tour Bookings",
       },
     },
   };
@@ -51,12 +54,34 @@ const DashMain = () => {
       {
         label: "Number Of Booking",
         data: [20, 42, 43, 10, 54, 8, 23, 40],
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        backgroundColor: "rgb(194,157,89)",
       },
       {
-        label: "Dataset 2",
-        data: [],
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
+        label: "Number of Users",
+        data: [10, 40, 13, 13, 54, 18, 43, 20],
+        backgroundColor: "rgb(43,40,40)",
+      },
+    ],
+  };
+
+  const dataPie = {
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
+
+    datasets: [
+      {
+        label: " Number Of Tours",
+        data: [12, 19, 3, 5, 2, 3, 5],
+        backgroundColor: [
+          "#B9A943",
+          "#23556C",
+          "#6D5322",
+          "#303436",
+          "#C39B46",
+          "#005236",
+          "#D0D8B2",
+        ],
+
+        borderWidth: 1,
       },
     ],
   };
@@ -70,8 +95,13 @@ const DashMain = () => {
       </div>
 
       <div className="charts">
-        <Bar options={options} data={data} />
-        <Bar options={options} data={data} />
+        <div className="left-chart">
+          {" "}
+          <Bar options={options} data={data} />
+        </div>
+        <div className="right-chart">
+          <Pie data={dataPie} />
+        </div>
       </div>
     </div>
   );

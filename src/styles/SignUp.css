@@ -150,5 +150,10 @@
        display: none;
     }
 
+    .sl-container {
+        padding: 200px 0px;
+     
+    }
+
 
 }

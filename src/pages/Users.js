@@ -49,14 +49,14 @@ const Users = () => {
           }, 2000);
         })
         .catch((error) => {
-          toast.error(error.response.data.message);
+          toast.error(error.message);
           console.log(error, "Error");
         });
     }
   };
 
   return (
-    <div className="sidebar-right-sidee">
+    <div className="sidebarr-right-sidee">
       <div className="table-component">
         <table class="tablee">
           <thead>
@@ -76,8 +76,8 @@ const Users = () => {
                   <td>{user.email}</td>
                   <td>{user.role}</td>
 
-                  <td>
-                    <td>
+                  <td className="right-td">
+                    <td className="right-tdd">
                       <span className="actionss">
                         <BsFillTrashFill
                           className="delete-btns"

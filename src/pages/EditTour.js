@@ -83,7 +83,7 @@ const EditTour = () => {
       })
       .catch((error) => {
         console.log(error);
-        toast.error("Error occured");
+        toast.error(error.message);
       });
   };
   /*    ======================================   */

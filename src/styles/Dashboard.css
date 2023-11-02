@@ -20,6 +20,7 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 200px;
 }
 
 .stats-img{
@@ -49,13 +50,29 @@ body{
   font-size: 1.875rem;
   line-height: 2.25rem;
   text-align: center;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 /* ----=======================================---*/
+
+
+.charts{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+}
+
+.left-chart{
+  height: 500px;
+  width: 500px;
+}
+.right-chart{
+  height: 250px;
+  width: 350px;
+}
+
+
 /* ----=======================================---*/
-
-
 
 .dashboard-center{
     display: flex;
@@ -63,7 +80,8 @@ body{
     align-items: center;
     justify-content: center; 
     height: 100vh;
-    padding-left: 120px;
+    padding-left: 180px;
+   
 }
 
 
@@ -363,6 +381,46 @@ th{
   .actions {
     gap: 10px;
   }
+
+
+
+  .dashboard-center{
+    padding-left: 0;
+   
+}
+
+.stat-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.stats-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.charts{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+.left-chart{
+  height: 180px;
+  width: 380px;
+}
+.right-chart{
+  height: 180px;
+  padding-left: 90px;
+  /* width: 380px; */
+
+}
 
 
 }

@@ -4,7 +4,6 @@
 }
 
 .dtour-head{
-
     background-size: cover;
     background-attachment: fixed;
     height: 500px;   
@@ -530,6 +529,7 @@ margin-bottom: 15px;
 
 .tour-short-info-box ul {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     list-style: none;
     padding-left: 13px;

@@ -1,8 +1,8 @@
 
-.sidebar-right-sidee{
+.sidebarr-right-sidee{
   display: flex;
   flex-direction: column;
-  margin-left: 160px;
+  margin-left: 110px;
   padding-bottom: 20px;
   margin-top: 100px;
 }
@@ -52,12 +52,25 @@
     cursor: pointer;
   }
 
-
+.actionf{
+  display: flex;
+  padding-left: 1.5rem !important;
+  width: 100%;
+}
   .actionss{
     display: flex;
     gap: 14px;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: flex-end;  
+  }
+  .right-td{
+    width: 10% !important;
+    padding-left: 1rem !important;
+   
+  }
+  .right-tdd{
+    width: 100% !important;
+    
   }
    
   .delete-btns{
@@ -66,3 +79,12 @@
   .edit-buttonns{
     color: #040504;
   }
+
+ /* ======================== */ 
+
+
+ @media only screen and (max-width: 425px) {
+  .sidebarr-right-sidee{
+    margin-left: 21px;
+  }
+}

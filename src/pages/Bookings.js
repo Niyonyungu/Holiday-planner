@@ -35,7 +35,7 @@ const Bookings = () => {
     if (window.confirm("Are you sure you want to delete This Booking ?")) {
       let token = localStorage.getItem("token");
       axios({
-        url: `https://holiday-planner-4lnj.onrender.com/api/v1/auth/users/delete/${id}`,
+        url: `https://holiday-planner-4lnj.onrender.com/api/v1/booking/delete/${id}`,
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -49,7 +49,7 @@ const Bookings = () => {
           }, 2000);
         })
         .catch((error) => {
-          toast.error(error.response.data.message);
+          toast.error(error.message);
           console.log(error, "Error");
         });
     }
@@ -65,7 +65,7 @@ const Bookings = () => {
               <th> Email</th>
               <th> Phone</th>
               <th> Date</th>
-              <th>Number Of Tickets</th>
+              <th> Number Of Tickets</th>
               <th className="actionf">Action</th>
             </tr>
           </thead>
@@ -73,11 +73,11 @@ const Bookings = () => {
             {bookings.map((book) => {
               return (
                 <tr>
-                  <td>{book.fullName}</td>
+                  <td className="book-id">{book.fullname}</td>
                   <td>{book.email}</td>
                   <td>{book.phone}</td>
                   <td>{book.date}</td>
-                  <td>{book.tickets}</td>
+                  <td>{book.numberOfTickets}</td>
                   <td>
                     <td>
                       <span className="actionss">
