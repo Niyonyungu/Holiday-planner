@@ -40,7 +40,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
-        toast.error("user doesn't exist");
+        toast.error(error.message);
       });
   };
 

@@ -44,20 +44,20 @@ const EditUser = () => {
   const submitNewUser = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    let formdata = new FormData();
-
-    formdata.append("fullName", userName);
-    formdata.append("email", userEmail);
-    formdata.append("role", userRole);
+    const data = {
+      fullName: userName,
+      email: userEmail,
+      role: userRole,
+    };
 
     let token = localStorage.getItem("token");
 
     axios({
       method: "PUT",
       url: `https://holiday-planner-4lnj.onrender.com/api/v1/auth/users/update/${userEmail}`,
-      data: formdata,
+      data: data,
       headers: {
-        "Content-Type": "multipart/form-data",
+        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
     })

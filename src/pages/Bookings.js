@@ -4,8 +4,14 @@ import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs";
 import "../styles/Bookings.css";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const Bookings = () => {
+  const params = useParams();
+  let detailId = params.id;
+
+  console.log(detailId);
+
   const navigate = useNavigate();
   const [bookings, setBookings] = useState([]);
   let token = localStorage.getItem("token");

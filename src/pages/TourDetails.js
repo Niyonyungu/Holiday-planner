@@ -27,10 +27,14 @@ const Tourdetaills = () => {
   const [bookFormDate, setBookFormDate] = useState();
   const [bookFormTicketsNumber, setBookFormTicketsNumber] = useState();
 
+  const params = useParams();
+  let tourId = params.id;
+
   const submitBooking = (e) => {
     e.preventDefault();
     setIsLoading(true);
     let data = new FormData();
+    data.append("tourID", tourId);
     data.append("fullname", bookFormName);
     data.append("email", bookFormEmail);
     data.append("phone", bookFormPhone);
@@ -38,6 +42,8 @@ const Tourdetaills = () => {
     data.append("numberOfTickets", bookFormTicketsNumber);
 
     let token = localStorage.getItem("token");
+
+    console.log(token);
 
     axios({
       method: "POST",
@@ -65,8 +71,7 @@ const Tourdetaills = () => {
   /*    ================ END BOOKING FORM FETCHING==============      */
 
   /*    ===============TOUR DETAILS FETCHING===============      */
-  const params = useParams();
-  let tourId = params.id;
+
   const [destinationImage, setDestinationImage] = useState();
   const [destination, setDestination] = useState();
   const [title, setTitle] = useState();
@@ -379,7 +384,7 @@ const Tourdetaills = () => {
                 placeholder="Number Of Tickets*"
                 onChange={(e) => {
                   e.preventDefault();
-                  setBookFormTicketsNumber(e.target.value);
+                  setBookFormTicketsNumber(parseInt(e.target.value));
                 }}
               />
               <textarea className="txt-a" placeholder="message"></textarea>
