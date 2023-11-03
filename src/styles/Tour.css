@@ -269,6 +269,8 @@ margin-bottom: 15px;
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
+    height: 100%;
+    padding-bottom: 10px;
   }
   .tourCards img{
     width: 100%;
