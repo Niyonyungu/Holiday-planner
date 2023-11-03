@@ -8,10 +8,18 @@ import { FaUsers } from "react-icons/fa";
 import { BiChevronRight } from "react-icons/bi";
 import emug from "../assets/mg.jpg";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SideBar = () => {
+  const navigate = useNavigate();
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
+  const handleLogOut = () => {
+    navigate("/login");
+  };
   /*      =========================      */
-
   /*      =========================      */
 
   return (
@@ -50,10 +58,15 @@ const SideBar = () => {
         </li>
       </ul>
       <div className="sidebar-list-item dwn">
-        <Link to="/login">
+        {/* <Link to="/login">
           <HiOutlineLogout className="icon" />
           LOG OUT
-        </Link>
+        </Link> */}
+        <button onClick={handleLogOut}>
+          <HiOutlineLogout className="icon" />
+          LOG OUT
+        </button>
+        <ToastContainer />
       </div>
     </aside>
   );
