@@ -32,7 +32,7 @@ const TourForm = () => {
 
     axios({
       method: "POST",
-      url: "https://holiday-planner-4lnj.onrender.com/api/v1/auth/signup",
+      url: "https://holiday-planner-4lnj.onrender.com/api/v1/tour/create",
       data: data,
       headers: {
         Authorization: `Bearer ${token}`,
