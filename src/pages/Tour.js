@@ -92,7 +92,6 @@ const Tour = () => {
                       <div className="footcards">
                         <p className="price">{tour.Price} $ </p>
                         <button
-                          to="/tourdetail"
                           className="butCard"
                           onClick={() => navigate(`/tourdetail/${tour._id}`)}
                         >

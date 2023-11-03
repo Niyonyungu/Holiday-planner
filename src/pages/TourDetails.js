@@ -34,6 +34,7 @@ const Tourdetaills = () => {
     e.preventDefault();
     setIsLoading(true);
     let data = new FormData();
+
     data.append("tourID", tourId);
     data.append("fullname", bookFormName);
     data.append("email", bookFormEmail);
