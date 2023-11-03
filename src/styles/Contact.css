@@ -345,3 +345,62 @@ margin-bottom: 15px;
     }
   }
 
+  @media screen and (min-width: 426px) and (max-width: 600px) {
+    .ct-top h1 {
+      font-size: 40px;
+      margin-top: 20%;
+    }
+
+    .mail,
+    .srv {
+      margin-top: 77px;
+      margin-left:  6px;
+    }
+  
+    .ct-center {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    form {
+      margin: 80px 20px;
+    }
+  
+    .naem,
+    .tetx {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .naem input,
+    .tetx input {
+      width: 100%;
+    }
+  
+    .msg {
+      width: 100%;
+    }
+  
+    form button {
+      width: 100%;
+    }
+  
+    .quest-top-title h1 {
+      font-size: 20px;
+    }
+  
+    .ct-bottom-left {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  
+    .office {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  
+    .lctn {
+      margin-left: 0;
+    }
+  }

@@ -16,6 +16,6 @@
 
 @media only screen and (max-width: 425px) {
     .sidebar-right-sideee{  
-        margin-left: 21px;
+        margin-left: -2px !important ;
     }
 }

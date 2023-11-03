@@ -509,3 +509,120 @@ margin-bottom: 15px;
 }
 
 }
+@media screen and (min-width: 426px) and (max-width: 600px) {
+  .tour-head h1 {
+    font-size: 25px;
+    margin-top: 150px;
+  }
+  .tour-btm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .country {
+    left: 0.5rem;
+    width: 150px;
+  }
+
+  .cardDescription {
+    height: auto;
+  }
+
+  .time-size {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    height: auto;
+  }
+
+  .quest-toppu {
+    width: 350px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 38px;
+  }
+
+  .questt-t {
+    background-color: rgb(194, 157, 89);
+    margin-top: 35px;
+    padding: 35px;
+    width: 350px;
+    margin-right: 0;
+    margin-left: 0;
+    box-shadow: 0 0 5px rgba(15, 1, 1, 0.9);
+  }
+
+  .footcards p {
+    margin-right: 12px;
+  }
+
+  .sort-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sort-form p {
+    height: 43px;
+    width: 348px;
+    border: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+  }
+
+  .sort-form select {
+    height: 43px;
+    width: 348px;
+    border: 1px solid gray;
+    border-radius: 0;
+    background-color: aliceblue;
+    outline: none;
+  }
+
+  .right-form {
+    margin-top: 10px;
+    display: flex;
+    padding-right: 300px;
+    flex-direction: column;
+    margin-left: -50px !important;
+  }
+
+  .tourCard {
+    width: 350px;
+    margin-left: 0;
+    height: auto;
+  }
+
+  .tourCards {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .finddd {
+    color: black;
+    font-weight: 900;
+    font-size: 20px;
+    border-left: 3px solid rgb(194, 157, 89);
+    padding-left: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .srch-ff {
+    margin-top: 98px;
+  }
+
+  .lct-ff {
+    margin-top: 150px;
+  }
+
+  .cld-ff {
+    margin-top: 200px;
+  }
+}

@@ -332,3 +332,14 @@ color: antiquewhite;
       padding-right: 2px;
     }
   }
+
+
+
+  @media screen and (min-width: 426px) and (max-width: 600px) {
+    .line-ft {
+      width: 450px;
+    }
+    .d-right{
+      margin-left: 95px;
+    }
+  }

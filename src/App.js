@@ -40,7 +40,7 @@ function App() {
             <Route path="edittour/:id" element={<EditTour />} />
             <Route path="edituser/:id" element={<EditUser />} />
             <Route path="bookings" element={<Bookings />} />
-            <Route path="editbookings" element={<EditBookings />} />
+            <Route path="editbookings/:id" element={<EditBookings />} />
           </Route>
         </Routes>
       </BrowserRouter>

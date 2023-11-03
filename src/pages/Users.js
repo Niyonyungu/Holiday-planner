@@ -23,7 +23,7 @@ const Users = () => {
       })
       .catch((error) => {
         console.log(error);
-        toast.error(Response.data.message);
+        toast.error(error.message);
       });
   };
 

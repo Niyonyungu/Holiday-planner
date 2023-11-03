@@ -130,3 +130,49 @@
     }
   }
 
+  @media screen and (min-width: 426px) and (max-width: 600px) {
+    .AboutUs {
+      flex-direction: column;
+      padding-top: 10px;
+    }
+    
+    .amafoto {
+      width: 100%;
+      height: auto;
+      flex-direction: column;
+      padding: 0;
+    }
+    
+    .ifoto1 {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    
+    .ifoto2 {
+      position: static;
+      top: auto;
+      left: auto;
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    
+    .bugufi {
+      width: 100%;
+      margin-left: 0;
+      padding: 0;
+    }
+    
+    .abouttitle {
+      justify-content: center;
+    }
+    
+    .aboutSubtitle {
+      justify-content: center;
+    }
+    
+    .readMorebut {
+      width: 100%;
+    }
+  }

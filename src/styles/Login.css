@@ -177,3 +177,10 @@
 
 
 }
+@media screen and (min-width:426px) and (max-width: 600px) {
+  .pic-side{
+    display: none;
+ }
+}
+
+
