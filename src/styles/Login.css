@@ -181,11 +181,10 @@
     display: none;
  }
 }
-
-@media only screen and (min-device-width:768px){
+/* @media only screen and (max-width:768px){
     .pic-side {
         height: 481px;
      }
-}
+} */
 
 

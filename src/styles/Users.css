@@ -89,10 +89,10 @@
   }
 }
 
-@media only screen and (min-device-width:768px){
+/* @media only screen and (max-width:768px){
   .table-componentt{
 padding-left: 50px;
   }
-}
+} */
 
 

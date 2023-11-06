@@ -206,11 +206,11 @@ select{
     }
   }
 
-  @media only screen and (min-device-width:768px){
+  /* @media only screen and (max-width:768px){
 
     .tlv{
       margin-left: 395px;
     }
 
   }
-  
+   */

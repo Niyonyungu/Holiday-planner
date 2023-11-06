@@ -590,7 +590,7 @@ margin-bottom: 15px;
 }
 
 
-@media only screen and (min-device-width:768px){
+/* @media only screen and (max-width:768px){
     .tour-btmo{
         display: flex;
         flex-direction: column;
@@ -613,11 +613,8 @@ margin-bottom: 15px;
         width: 400px;
         margin-left: -60px !important;
     }
-    
-    
     .questt-tt {
         width: 400px;
         margin-left: -60px !important;
     } 
-
-}
+} */

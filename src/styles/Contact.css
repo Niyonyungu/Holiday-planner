@@ -406,7 +406,7 @@ margin-bottom: 15px;
   }
 
 
-  @media only screen and (min-device-width: 768px) {
+  /* @media only screen and (max-width:768px) {
 
     .ct-center {
       flex-direction: column;
@@ -422,4 +422,4 @@ margin-bottom: 15px;
       margin-left: 2px;
     }
 
-  }
+  } */
