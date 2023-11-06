@@ -6,14 +6,14 @@ Holiday Planner is a website where a user can go and create an acount and book a
 
 ## An Admin Is able to :
 
-### view/Delete/Edit and Update the bookings
+- view/Delete/Edit and Update the bookings
 
-### view/Add/Delete/Edit and Update the tours
+- view/Add/Delete/Edit and Update the tours
 
-### view/Delete/Edit and Update Users
+- view/Delete/Edit and Update Users
 
-## An Admin Is able to :
+## A User Is able to :
 
-### Create An Acount And Make A Booking.
+- Create An Acount And Make A Booking.
 
 ## ! Responsive To Moile Devices !
