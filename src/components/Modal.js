@@ -24,11 +24,6 @@ const Modal = ({ closeModal }) => {
               </Link>
             </li>
             <li>
-              <Link to="/tourdetail" onClick={closeModal}>
-                Tour Detail
-              </Link>
-            </li>
-            <li>
               <Link to="/contact" onClick={closeModal}>
                 Contact Us
               </Link>

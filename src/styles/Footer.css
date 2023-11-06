@@ -87,6 +87,12 @@ span input{
     color: aliceblue;
 }
 
+.middle a{
+  text-decoration: none;
+  color: aliceblue;
+  font-weight: bold;
+}
+
 ::placeholder {
     color: wheat;
   }

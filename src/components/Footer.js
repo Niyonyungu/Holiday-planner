@@ -2,14 +2,16 @@ import "../styles/Footer.css";
 import { SlSocialTwitter } from "react-icons/sl";
 import { PiInstagramLogo } from "react-icons/pi";
 import { SlSocialFacebook } from "react-icons/sl";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="foooter">
       <div className="container">
         <div className="left">
-          <img src="white-logo.png" alt="" />
+          <Link to="/">
+            <img src="white-logo.png" alt="" />
+          </Link>
           <p>
-            {" "}
             Holiday Planners sit amet consectetur <br /> adipisicing elit.
             Perferendis sapiente tenetur officiis <br /> explicabo fugit, sit
             mollitia eum atque excepturi quaerat autem.{" "}
@@ -26,12 +28,21 @@ const Footer = () => {
           <h1>Navigation</h1>
           <div className="line"></div>
           <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact us</li>
-            <li>Tour</li>
-            <li>Tour details</li>
-            <li>Login</li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="about">About</Link>
+            </li>
+            <li>
+              <Link to="/tour">Tour</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact Us</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
           </ul>
         </div>
         <div className="right">

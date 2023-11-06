@@ -54,80 +54,93 @@ const TourForm = () => {
   };
 
   return (
-    <form action="" className="addTourForm">
-      <h4>ADD</h4>
-      <label htmlFor=""> Destination Image</label>
-      <input
-        type="file"
-        src=""
-        alt=""
-        placeholder="Enter the image"
-        className="file"
-        onChange={(e) => {
-          e.preventDefault();
-          setDestinationImage(e.target.files[0]);
-        }}
-      />
+    <form action="" className="addTurForm">
+      {/* <h4>ADD TOUR</h4> */}
+      <div>
+        <label htmlFor=""> Destination Image</label>
+        <input
+          type="file"
+          src=""
+          alt=""
+          placeholder="Enter the image"
+          className="file"
+          onChange={(e) => {
+            e.preventDefault();
+            setDestinationImage(e.target.files[0]);
+          }}
+        />
+      </div>
+      <div>
+        <label htmlFor="">Destination</label>
+        <input
+          type="text"
+          placeholder="mention your  destination"
+          onChange={(e) => {
+            e.preventDefault();
+            setDestination(e.target.value);
+          }}
+        />
+      </div>
 
-      <label htmlFor="">Destination</label>
-      <input
-        type="text"
-        placeholder="mention your  destination"
-        onChange={(e) => {
-          e.preventDefault();
-          setDestination(e.target.value);
-        }}
-      />
+      <div>
+        <label htmlFor="">Title</label>
+        <input
+          type="text"
+          placeholder="Put your Title"
+          onChange={(e) => {
+            e.preventDefault();
+            setTitle(e.target.value);
+          }}
+        />
+      </div>
 
-      <label htmlFor="">Title</label>
-      <input
-        type="text"
-        placeholder="Put your Title"
-        onChange={(e) => {
-          e.preventDefault();
-          setTitle(e.target.value);
-        }}
-      />
+      <div>
+        <label htmlFor="">Description</label>
+        <input
+          type="text"
+          placeholder="Describe your  destination"
+          onChange={(e) => {
+            e.preventDefault();
+            setDescription(e.target.value);
+          }}
+        />
+      </div>
 
-      <label htmlFor="">Description</label>
-      <input
-        type="text"
-        placeholder="Describe your  destination"
-        onChange={(e) => {
-          e.preventDefault();
-          setDescription(e.target.value);
-        }}
-      />
+      <div>
+        <label htmlFor="">Duration</label>
+        <input
+          type="text"
+          placeholder="how long will you stay ?"
+          onChange={(e) => {
+            e.preventDefault();
+            setDuration(e.target.value);
+          }}
+        />
+      </div>
 
-      <label htmlFor="">Duration</label>
-      <input
-        type="text"
-        placeholder="how long will you stay ?"
-        onChange={(e) => {
-          e.preventDefault();
-          setDuration(e.target.value);
-        }}
-      />
+      <div>
+        <label htmlFor="">Group size</label>
+        <input
+          type="text"
+          placeholder="let us know number of people"
+          onChange={(e) => {
+            e.preventDefault();
+            setGroupSize(e.target.value);
+          }}
+        />
+      </div>
 
-      <label htmlFor="">Group size</label>
-      <input
-        type="text"
-        placeholder="let us know number of people"
-        onChange={(e) => {
-          e.preventDefault();
-          setGroupSize(e.target.value);
-        }}
-      />
-
-      <label htmlFor="">Price</label>
-      <input
-        type="number"
-        placeholder="price in dollar$"
-        onChange={(e) => {
-          e.preventDefault();
-          setPrice(e.target.value);
-        }}
-      />
+      <div>
+        <label htmlFor="">Price</label>
+        <input
+          type="number"
+          placeholder="price in dollar$"
+          onChange={(e) => {
+            e.preventDefault();
+            setPrice(e.target.value);
+          }}
+        />
+      </div>
 
       <button className="addTourbu" onClick={submitTour}>
         {isLoading ? "Creating New Tour..." : "Create New Tour"}

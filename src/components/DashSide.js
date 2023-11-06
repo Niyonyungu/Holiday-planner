@@ -58,10 +58,6 @@ const SideBar = () => {
         </li>
       </ul>
       <div className="sidebar-list-item dwn">
-        {/* <Link to="/login">
-          <HiOutlineLogout className="icon" />
-          LOG OUT
-        </Link> */}
         <button onClick={handleLogOut}>
           <HiOutlineLogout className="icon" />
           LOG OUT
