@@ -1,11 +1,18 @@
 import "../styles/TourDetails.css";
 import { BsFillPersonFill } from "react-icons/bs";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { MdEmail } from "react-icons/md";
+import { MdEmail, MdLocationPin } from "react-icons/md";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { AiFillPhone } from "react-icons/ai";
 import { RiCalendar2Fill } from "react-icons/ri";
-import { FaUserTag } from "react-icons/fa";
+import { FaUserTag, FaBookOpen } from "react-icons/fa";
+import { RiInformationFill } from "react-icons/ri";
+import { MdPhotoCamera } from "react-icons/md";
+import { MdPreview } from "react-icons/md";
+import { BsFillClockFill } from "react-icons/bs";
+import { BsPeopleFill } from "react-icons/bs";
+import { MdEventSeat } from "react-icons/md";
+import { GiFlowerStar } from "react-icons/gi";
 import video from "../assets/video.mp4";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -141,31 +148,34 @@ const Tourdetaills = () => {
             <ul className="nav nav-tabs wow ">
               <li className="nav-item">
                 <a className="nav-link active">
-                  <i className="fas fa-info-circle" aria-hidden="true"></i>
+                  <i>
+                    <RiInformationFill />
+                  </i>
                   Information
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link">
-                  <i className="fas fa-book-open" aria-hidden="true"></i>Tour
-                  Plan
+                  <FaBookOpen />
+                  Tour Plan
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link">
-                  <i className="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <MdLocationPin />
                   Location
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link">
-                  <i className="fas fa-camera-retro" aria-hidden="true"></i>
+                  <MdPhotoCamera />
                   Gallery
                 </a>
               </li>
               <li className="nav-item">
                 <a className="nav-link">
-                  <i className="fas fa-users" aria-hidden="true"></i>Review
+                  <MdPreview />
+                  Review
                 </a>
               </li>
             </ul>
@@ -192,34 +202,24 @@ const Tourdetaills = () => {
                   <div className="tour-short-info-box">
                     <ul>
                       <li>
-                        <i className="fas fa-clock" aria-hidden="true"></i>
+                        <BsFillClockFill />
                         <span className="text">{duration} Days</span>
                       </li>
                       <li>
-                        <i
-                          className="fas fa-user-friends"
-                          aria-hidden="true"
-                        ></i>
+                        <BsPeopleFill />
                         <span className="text"> {groupSize}People</span>
                       </li>
                       <li>
-                        <i className="fas fa-user-plus" aria-hidden="true"></i>
+                        <MdEventSeat />
                         <span className="text">{Seats} Seats </span>
                       </li>
                       <li>
-                        <a href="destination-detail.html">
-                          <i
-                            className="fas fa-map-marker-alt"
-                            aria-hidden="true"
-                          ></i>
-                          <span className="text">{destination}</span>
-                        </a>
+                        <MdLocationPin />
+                        <span className="text">{destination}</span>
                       </li>
                       <li>
-                        <a href="javascript:void(0);">
-                          <i className="fas fa-sun" aria-hidden="true"></i>
-                          <span className="text">Discovery</span>
-                        </a>
+                        <GiFlowerStar />
+                        <span className="text">Discovery</span>
                       </li>
                     </ul>
                   </div>
