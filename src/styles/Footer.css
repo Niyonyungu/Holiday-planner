@@ -223,7 +223,7 @@ color: antiquewhite;
   }
   
   @media only screen and (max-width: 600px) {
-    /* Big smartphones [426px -> 600px] */
+  
     .left {
       padding-left: 20px;
       padding-right: 20px;
@@ -342,4 +342,18 @@ color: antiquewhite;
     .d-right{
       margin-left: 95px;
     }
+  }
+
+  @media only screen and (min-device-width: 768px) {
+    .line-ft {
+      width: 90%;
+    }
+    .d-left {
+      margin-left: 130px;
+    }
+
+    .d-right {
+      margin-left: 200px;
+    }
+
   }

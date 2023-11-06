@@ -205,3 +205,12 @@ select{
       margin-top: 5px;
     }
   }
+
+  @media only screen and (min-device-width:768px){
+
+    .tlv{
+      margin-left: 395px;
+    }
+
+  }
+  

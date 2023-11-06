@@ -559,7 +559,6 @@ margin-bottom: 15px;
 
 @media screen and (min-width:426px) and (max-width: 600px) {
   .tour-btmo{
- 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -591,3 +590,34 @@ margin-bottom: 15px;
 }
 
 
+@media only screen and (min-device-width:768px){
+    .tour-btmo{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+    }
+    
+    
+    .right-formo{
+        width: 400px;
+        margin-top: 15px;
+        margin-left: -60px !important;
+    }
+    
+    
+    .quest-topp {
+        margin-top: 38px;
+        padding: 30px;
+        width: 400px;
+        margin-left: -60px !important;
+    }
+    
+    
+    .questt-tt {
+        width: 400px;
+        margin-left: -60px !important;
+    } 
+
+}

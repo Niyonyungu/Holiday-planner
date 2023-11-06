@@ -175,12 +175,17 @@
        display: none;
     }
 
-
 }
 @media screen and (min-width:426px) and (max-width: 600px) {
-  .pic-side{
+ .pic-side {
     display: none;
  }
+}
+
+@media only screen and (min-device-width:768px){
+    .pic-side {
+        height: 481px;
+     }
 }
 
 

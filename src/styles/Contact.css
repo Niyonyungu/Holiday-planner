@@ -404,3 +404,22 @@ margin-bottom: 15px;
       margin-left: 0;
     }
   }
+
+
+  @media only screen and (min-device-width: 768px) {
+
+    .ct-center {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .quest{
+      margin-top: 90px;
+      margin-left: 99px;
+    }
+ 
+    form {
+      margin-left: 2px;
+    }
+
+  }
