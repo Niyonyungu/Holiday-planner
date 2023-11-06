@@ -30,15 +30,19 @@
     padding: 5px;
   } */
   .addTurForm label{
-   
-    font-weight: bolder;
+    font-weight: 900;
+    background-color: #ddb66dac;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.445);
+    color: rgb(0, 0, 0);
     width: 50%;
-    height: 2rem;
+    height: 30px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 1rem;
-    padding-left: 15px;
+    padding: 19px 55px;
+    margin-left: 22%;
   }
   .addTurForm input{
    
@@ -63,7 +67,9 @@
     outline: none;
     border-radius: 5px;
     color: #ffffff;
+    margin-top: 40px;
   }
+  
   .addTourbu:hover{
     background-color: #cc8809;
     cursor: pointer;

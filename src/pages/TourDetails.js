@@ -79,6 +79,14 @@ const Tourdetaills = () => {
   const [duration, setDuration] = useState();
   const [groupSize, setGroupSize] = useState();
   const [price, setPrice] = useState();
+  const [discount, setDiscount] = useState();
+  const [tourType, setTourType] = useState();
+  const [departure, setDeparture] = useState();
+  const [Seats, setSeats] = useState();
+  const [fromMonth, setFromMonth] = useState();
+  const [toMonth, setToMonth] = useState();
+  const [departureTime, setDepartureTime] = useState();
+  const [ReturnTime, setReturnTime] = useState();
 
   const fetchTour = () => {
     let token = localStorage.getItem("token");
@@ -97,6 +105,15 @@ const Tourdetaills = () => {
         setDuration(response?.data?.Duration);
         setGroupSize(response?.data?.GroupSize);
         setPrice(response?.data?.Price);
+        setDiscount(response?.data?.Discount);
+        setTourType(response?.data?.TourType);
+        setDeparture(response?.data?.Departure);
+        setSeats(response?.data?.Seats);
+        setFromMonth(response?.data?.fromMonth);
+        setToMonth(response?.data?.toMonth);
+        setDepartureTime(response?.data?.departureTime);
+        setReturnTime(response?.data?.ReturnTime);
+
         console.log(response);
       })
       .catch((error) => {
@@ -156,7 +173,7 @@ const Tourdetaills = () => {
             <div className="tab-content ">
               <div className="tab-pane ">
                 <div className="tab-box information-tab-box">
-                  <span className="discount-label">22% Off</span>
+                  <span className="discount-label"> {discount}% Off</span>
                   <div className="row">
                     <div className="col-xl">
                       <div className="tour-title">
@@ -167,7 +184,7 @@ const Tourdetaills = () => {
                       <div className="tour-price-wp">
                         <div className="tour-price">
                           <h3 className="h3-title">$ {price}</h3>
-                          <p>Per Person</p>
+                          <p>Whole Trip</p>
                         </div>
                       </div>
                     </div>
@@ -187,7 +204,7 @@ const Tourdetaills = () => {
                       </li>
                       <li>
                         <i className="fas fa-user-plus" aria-hidden="true"></i>
-                        <span className="text">18</span>
+                        <span className="text">{Seats} Seats </span>
                       </li>
                       <li>
                         <a href="destination-detail.html">
@@ -233,24 +250,39 @@ const Tourdetaills = () => {
                         <div className="tts-label">
                           <h4 className="h4-title">Departure</h4>
                         </div>
-                        <div cclassName="tts-description">Lorem Ipsum</div>
+                        <div cclassName="tts-description">{departure}</div>
                       </li>
                       <li>
                         <div className="tts-label">
                           <h4 className="h4-title">Departure Time</h4>
                         </div>
-                        <div className="tts-description">
-                          9:15 AM To 9:30 AM.
-                        </div>
+                        <div className="tts-description">{departureTime}</div>
                       </li>
                       <li>
                         <div className="tts-label">
                           <h4 className="h4-title">Return Time</h4>
                         </div>
-                        <div className="tts-description">
-                          Approximately 10:30 PM.
-                        </div>
+                        <div className="tts-description">{ReturnTime}</div>
                       </li>
+                      <li>
+                        <div className="tts-label">
+                          <h4 className="h4-title">Tour Type</h4>
+                        </div>
+                        <div className="tts-description">{tourType}</div>
+                      </li>
+                      <li>
+                        <div className="tts-label">
+                          <h4 className="h4-title">From (Month)</h4>
+                        </div>
+                        <div className="tts-description">{fromMonth}</div>
+                      </li>
+                      <li>
+                        <div className="tts-label">
+                          <h4 className="h4-title">To (Month)</h4>
+                        </div>
+                        <div className="tts-description">{toMonth}</div>
+                      </li>
+
                       <li>
                         <div className="tts-label">
                           <h4 className="h4-title">Dress Code</h4>
