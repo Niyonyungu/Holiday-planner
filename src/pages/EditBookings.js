@@ -82,7 +82,7 @@ const EditBookings = () => {
   };
 
   return (
-    <form action="" className="addTourForm">
+    <form action="" className="addTrurForm">
       <h4>EDIT BOOKING</h4>
 
       <label htmlFor="">Name</label>

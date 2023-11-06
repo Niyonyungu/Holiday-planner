@@ -89,8 +89,7 @@ const EditTour = () => {
   /*    ======================================   */
 
   return (
-    <form action="" className="addTourForm">
-      <h4>EDIT</h4>
+    <form action="" className="addTrurForm">
       <label htmlFor="">Destination Image</label>
       <input
         type="file"

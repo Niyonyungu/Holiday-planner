@@ -77,14 +77,14 @@ const Tour = () => {
                             <BiTimeFive className="cardcons" />
                             Duration
                           </h3>
-                          <p className="smallp">{tour.Duration} </p>
+                          <p className="smallp">{tour.Duration} Days</p>
                         </span>
                         <span className="groupSize">
                           <h3>
                             <MdGroup className="cardcons" />
                             Group Size
                           </h3>
-                          <p className="smallp">{tour.GroupSize} </p>
+                          <p className="smallp">{tour.GroupSize} People</p>
                         </span>
                       </div>
                       <div className="footcards">

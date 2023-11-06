@@ -524,7 +524,9 @@ margin-bottom: 15px;
 }
 
 .tour-price {
+    margin-left: -10px !important;
    margin-top: 20px;
+   width: 110px;
 }
 
 .tour-short-info-box ul {

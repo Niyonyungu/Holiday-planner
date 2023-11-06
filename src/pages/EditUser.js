@@ -76,7 +76,7 @@ const EditUser = () => {
   };
 
   return (
-    <form action="" className="addTourForm">
+    <form action="" className="addTrurForm">
       <h4>EDIT USER</h4>
 
       <label htmlFor="">User Name</label>

@@ -12,8 +12,10 @@ Holiday Planner is a website where a user can go and create an acount and book a
 
 - view/Delete/Edit and Update Users
 
+- view Stats & Charts
+
 ## A User Is able to :
 
 - Create An Acount And Make A Booking.
 
-## ! Responsive To Moile Devices !
+## ! Responsive To Mobile Devices !
