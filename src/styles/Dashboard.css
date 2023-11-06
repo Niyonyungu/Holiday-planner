@@ -478,9 +478,6 @@ th{
 
 /*    ==============main dash==============    */
 
-
-
-
 .dashboard-center{
   padding-left: 0;
   padding-top: 50px;
@@ -519,9 +516,43 @@ padding-left: 90px;
 
 }
 
-
-
-
-
-
 }
+
+
+
+
+@media only screen and (min-device-width:768px){
+
+  .header h3{
+    margin-left: 29%;
+  }
+  .stats-container{
+      display: flex;
+    flex-direction: column;
+    margin-top: 340px;
+   
+    }
+    .charts{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+      }
+
+      .right-chart{
+height: 380px;
+padding-left: 10px;
+}
+.stats-img{
+  width: 100% !important;
+}
+.stats-img img{
+  width: 100%;
+}
+.table-component{
+  margin-left: 30px;
+}
+}
+
+

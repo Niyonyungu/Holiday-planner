@@ -88,3 +88,11 @@
     margin-left: 21px;
   }
 }
+
+@media only screen and (min-device-width:768px){
+  .table-componentt{
+padding-left: 50px;
+  }
+}
+
+

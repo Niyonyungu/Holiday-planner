@@ -57,7 +57,7 @@ const Users = () => {
 
   return (
     <div className="sidebarr-right-sidee">
-      <div className="table-component">
+      <div className="table-componentt">
         <table class="tablee">
           <thead>
             <tr>
