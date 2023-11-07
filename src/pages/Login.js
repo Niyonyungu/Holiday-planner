@@ -26,12 +26,20 @@ const Login = () => {
         password: passworrd,
       },
     })
-      .then((Response) => {
-        localStorage.setItem("token", Response.data.access_token);
+      .then((response) => {
+        //user
+        localStorage.setItem("user", JSON.stringify(response.data.user));
+        const user = localStorage.getItem("user");
+        console.log(user);
+        // token
+        localStorage.setItem("token", response.data.access_token);
+        const token = localStorage.getItem("token");
+        console.log(token);
+
         toast.success("Logged in sucesfully");
         setIsLoading(false);
         setTimeout(() => {
-          if (Response.data.user.role === "admin") {
+          if (response.data.user.role === "admin") {
             navigate("/dashboard");
           } else {
             navigate("/");
