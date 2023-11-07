@@ -19,6 +19,14 @@ const EditTour = () => {
   const [duration, setDuration] = useState();
   const [groupSize, setGroupSize] = useState();
   const [price, setPrice] = useState();
+  const [discount, setDiscount] = useState();
+  const [tourType, setTourType] = useState();
+  const [departure, setDeparture] = useState();
+  const [Seats, setSeats] = useState();
+  const [fromMonth, setFromMonth] = useState();
+  const [toMonth, setToMonth] = useState();
+  const [departureTime, setDepartureTime] = useState();
+  const [ReturnTime, setReturnTime] = useState();
 
   /*    ==============================      */
   const fetchTour = () => {
@@ -38,6 +46,15 @@ const EditTour = () => {
         setDuration(response?.data?.Duration);
         setGroupSize(response?.data?.GroupSize);
         setPrice(response?.data?.Price);
+        setDiscount(response?.data?.Discount);
+        setTourType(response?.data?.TourType);
+        setDeparture(response?.data?.Departure);
+        setSeats(response?.data?.Seats);
+        setFromMonth(response?.data?.fromMonth);
+        setToMonth(response?.data?.toMonth);
+        setDepartureTime(response?.data?.departureTime);
+        setReturnTime(response?.data?.ReturnTime);
+
         console.log(response);
       })
       .catch((error) => {
@@ -57,10 +74,18 @@ const EditTour = () => {
     formdata.append("backdropImage", destinationImage);
     formdata.append("destination", destination);
     formdata.append("Title", title);
-    formdata.append("Description", description);
     formdata.append("Duration", duration);
+    formdata.append("Description", description);
     formdata.append("GroupSize", groupSize);
     formdata.append("Price", price);
+    formdata.append("Discount", discount);
+    formdata.append("TourType", tourType);
+    formdata.append("Departure", departure);
+    formdata.append("Seats", Seats);
+    formdata.append("fromMonth", fromMonth);
+    formdata.append("toMonth", toMonth);
+    formdata.append("departureTime", departureTime);
+    formdata.append("ReturnTime", ReturnTime);
 
     let token = localStorage.getItem("token");
 
@@ -166,6 +191,94 @@ const EditTour = () => {
         onChange={(e) => {
           e.preventDefault();
           setPrice(e.target.value);
+        }}
+      />
+
+      <label htmlFor="">Discount</label>
+      <input
+        value={discount}
+        type="number"
+        placeholder="discount"
+        onChange={(e) => {
+          e.preventDefault();
+          setDiscount(e.target.value);
+        }}
+      />
+
+      <label htmlFor="">Tour Type</label>
+      <input
+        value={tourType}
+        type="text"
+        placeholder="tour type"
+        onChange={(e) => {
+          e.preventDefault();
+          setTourType(e.target.value);
+        }}
+      />
+
+      <label htmlFor="">Departure</label>
+      <input
+        value={departure}
+        type="text"
+        placeholder="Departure"
+        onChange={(e) => {
+          e.preventDefault();
+          setDeparture(e.target.value);
+        }}
+      />
+
+      <label htmlFor="">Seats</label>
+      <input
+        value={Seats}
+        type="text"
+        placeholder="Seats"
+        onChange={(e) => {
+          e.preventDefault();
+          setSeats(e.target.value);
+        }}
+      />
+
+      <label htmlFor="">From (Month)</label>
+      <input
+        value={fromMonth}
+        type="text"
+        placeholder="from month"
+        onChange={(e) => {
+          e.preventDefault();
+          setFromMonth(e.target.value);
+        }}
+      />
+
+      <label htmlFor="">To (Month)</label>
+      <input
+        value={toMonth}
+        type="text"
+        placeholder="to month"
+        onChange={(e) => {
+          e.preventDefault();
+          setToMonth(e.target.value);
+        }}
+      />
+
+      <label htmlFor="">Departure time</label>
+      <input
+        value={departureTime}
+        type="text"
+        placeholder="Departure time"
+        onChange={(e) => {
+          e.preventDefault();
+          setDepartureTime(e.target.value);
+        }}
+      />
+
+      <label htmlFor="">Return Time</label>
+      <input
+        value={ReturnTime}
+        type="text"
+        placeholder="Return time"
+        onChange={(e) => {
+          e.preventDefault();
+          setReturnTime(e.target.value);
         }}
       />
 
