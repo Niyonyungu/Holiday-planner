@@ -77,8 +77,7 @@ const Tourdetaills = () => {
 
   /*    ================ END BOOKING FORM FETCHING==============      */
 
-  /*    ===============TOUR DETAILS FETCHING===============      */
-
+  /*    ===============TOUR DETAILS FETCHING===============     */
   const [destinationImage, setDestinationImage] = useState();
   const [destination, setDestination] = useState();
   const [title, setTitle] = useState();
@@ -86,6 +85,7 @@ const Tourdetaills = () => {
   const [duration, setDuration] = useState();
   const [groupSize, setGroupSize] = useState();
   const [price, setPrice] = useState();
+
   const [discount, setDiscount] = useState();
   const [tourType, setTourType] = useState();
   const [departure, setDeparture] = useState();
@@ -211,7 +211,7 @@ const Tourdetaills = () => {
                       </li>
                       <li>
                         <MdEventSeat />
-                        <span className="text">{Seats} Seats </span>
+                        <span className="text">{Seats}Seats </span>
                       </li>
                       <li>
                         <MdLocationPin />

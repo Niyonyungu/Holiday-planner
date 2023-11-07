@@ -8,7 +8,7 @@ const Dasboard = () => {
     <>
       <div className="wrap-da">
         <header className="header">
-          <h3>Hello , Vainqueur</h3>
+          <h3>Hello , </h3>;
         </header>
         <Outlet />
         <DashSide />
