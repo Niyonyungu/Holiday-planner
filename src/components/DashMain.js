@@ -1,6 +1,11 @@
 import React from "react";
 import "../styles/Dashboard.css";
 import StatsCard from "./StatsCard";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
+
+// ==============   charts Import s =================
 
 import {
   Chart as ChartJS,
@@ -14,6 +19,7 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import { Pie } from "react-chartjs-2";
+
 ChartJS.register(
   BarElement,
   CategoryScale,
@@ -23,8 +29,108 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
+// ==============  End charts Import s =================
 const DashMain = () => {
+  // ==============  Booking =================
+  const [bookings, setBookings] = useState([]);
+  let token = localStorage.getItem("token");
+  const fetchBookings = () => {
+    axios({
+      method: "GET",
+      url: "https://holiday-planner-4lnj.onrender.com/api/v1/booking/view",
+      headers: {
+        Authorization: `bearer ${token}`,
+      },
+    })
+      .then((Response) => {
+        setBookings(Response.data);
+        console.log(Response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    fetchBookings();
+  }, []);
+  // ============== End Booking =================
+  //  ======  charts fetching  ===============
+  const [chart, setChart] = useState([]);
+  const fetchChart = () => {
+    axios({
+      method: "GET",
+      url: "https://holiday-planner-4lnj.onrender.com/api/v1/count?year=2023",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((Response) => {
+        setChart(Response.data);
+        console.log(Response);
+      })
+
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    fetchChart();
+  }, []);
+  //  ======  End charts fetching  ===============
+  //  ===================  Tour fetching ============================
+
+  const [tourLists, setTourLists] = useState([]);
+
+  const fetchTourList = () => {
+    axios({
+      method: "GET",
+      url: "https://holiday-planner-4lnj.onrender.com/api/v1/tour",
+      headers: {
+        Authorization: `bearer ${token}`,
+      },
+    })
+      .then((Response) => {
+        setTourLists(Response.data);
+        console.log(Response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    fetchTourList();
+  }, []);
+
+  // ===================== End Tour fetching ========================
+
+  // ===================== User Fetching ==========================
+  const [users, setUsers] = useState([]);
+
+  const fetchUsers = () => {
+    axios({
+      method: "GET",
+      url: "https://holiday-planner-4lnj.onrender.com/api/v1/auth/users",
+      headers: {
+        Authorization: `bearer ${token}`,
+      },
+    })
+      .then((Response) => {
+        setUsers(Response.data);
+        console.log(Response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
+  // ===================== End User Fetching ======================
+  // ==============   charts declaration =================
   const options = {
     responsive: true,
     plugins: {
@@ -38,28 +144,15 @@ const DashMain = () => {
     },
   };
 
-  const labels = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-  ];
+  const labels = chart?.map((cart) => cart.label);
 
   const data = {
     labels,
     datasets: [
       {
-        label: "Number Of Booking",
-        data: [20, 42, 43, 10, 54, 8, 23, 40],
+        label: `  Number Of Booking for ${chart?.length} Months`,
+        data: chart?.map((cart) => cart.count),
         backgroundColor: "rgb(194,157,89)",
-      },
-      {
-        label: "Number of Users",
-        data: [10, 40, 13, 13, 54, 18, 43, 20],
-        backgroundColor: "rgb(43,40,40)",
       },
     ],
   };
@@ -85,18 +178,18 @@ const DashMain = () => {
       },
     ],
   };
+  // ==============   End charts declaration =================
 
   return (
     <div className="dashboard-center">
       <div className="stat-card">
-        <StatsCard title="Tours" amount="40" />
-        <StatsCard title="Booking" amount="200" />
-        <StatsCard title="users" amount="100" />
+        <StatsCard title="Tours" amount={tourLists.length} />
+        <StatsCard title="Booking" amount={bookings.length} />
+        <StatsCard title="users" amount={users.length} />
       </div>
 
       <div className="charts">
         <div className="left-chart">
-          {" "}
           <Bar options={options} data={data} />
         </div>
         <div className="right-chart">
