@@ -121,7 +121,6 @@ const Users = () => {
             containerClassName={"paginationButtons"}
             previousLinkClassName={"previousButton"}
             nextLinkClassName={"nextButton"}
-            disabledClassName={"pageDisabled"}
             activeClassName={"activePage"}
           />
         </div>

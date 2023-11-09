@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { logDOM } from "@testing-library/react";
+import PulseLoader from "react-spinners/PulseLoader";
 
 const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -49,6 +49,7 @@ const Login = () => {
         }, 2000);
       })
       .catch((error) => {
+        setIsLoading(false);
         console.log(error);
         toast.error(error.message);
       });
@@ -96,7 +97,11 @@ const Login = () => {
         </div>
 
         <button onClick={(e) => handleSignin(e)} className="l-button-submit">
-          {isLoading ? "Logging you in..." : "LOGIN"}
+          {isLoading ? (
+            <PulseLoader color="#de930e" className="loader" />
+          ) : (
+            "LOGIN"
+          )}
         </button>
 
         <div className="flex-row">

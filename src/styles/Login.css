@@ -121,7 +121,7 @@
 
 .l-button-submit {
     margin: 20px 0 10px 0;
-    background-color: rgb(194,157,89);
+    background-color: rgba(194, 157, 89, 0.749);
     border: none;
     color: white;
     font-size: 15px;
@@ -131,10 +131,17 @@
     width: 100%;
     cursor: pointer;  
 }
-
-.l-button-submit:hover {
-    background-color: #c4d698;
+.loader{
+   padding-top: 12px;
+    background-color: #fff;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
 }
+.loader:hover{
+    background-color: #fff;
+}
+
 
 .l-p {  
     color: black;

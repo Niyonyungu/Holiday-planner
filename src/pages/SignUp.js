@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import PulseLoader from "react-spinners/PulseLoader";
 
 const Sign = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -37,6 +38,7 @@ const Sign = () => {
         }, 2000);
       })
       .catch((error) => {
+        setIsLoading(false);
         toast.error(error.message);
       });
   };
@@ -66,6 +68,7 @@ const Sign = () => {
         </div>
         <div className="sl-inputForm">
           <input
+            required
             onChange={(e) => {
               e.preventDefault();
               setEmail(e.target.value);
@@ -91,7 +94,11 @@ const Sign = () => {
         </div>
 
         <button onClick={(e) => handleSignup(e)} className="sl-button-submit">
-          {isLoading ? "signing you up..." : "SIGN UP"}
+          {isLoading ? (
+            <PulseLoader color="#de930e" className="loader" />
+          ) : (
+            "SIGN UP"
+          )}
         </button>
 
         <div className="flex-row">
