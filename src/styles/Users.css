@@ -79,13 +79,47 @@
   .edit-buttonns{
     color: #040504;
   }
+.downn{
+  /* background-color: red; */
+  padding-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.paginationButtons{
+  width: 80%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+.paginationButtons a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px solid rgb(194,157,89);
+  color: rgb(194,157,89);
+  cursor: pointer;
+}
 
+.paginationButtons a:hover{
+  color: white;
+  background-color:rgb(194,157,89);
+}
+.activePage a{
+  color: white;
+  background-color:rgb(194,157,89);
+}
  /* ======================== */ 
 
 
  @media only screen and (max-width: 425px) {
   .sidebarr-right-sidee{
     margin-left: 21px;
+  }
+  .paginationButtons a{
+    padding: 9px;
+    margin: 1px;
   }
 }
 

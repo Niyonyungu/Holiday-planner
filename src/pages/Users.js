@@ -4,8 +4,10 @@ import { BsFillTrashFill, BsFillPencilFill } from "react-icons/bs";
 import "../styles/Users.css";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import ReactPaginate from "react-paginate";
 
 const Users = () => {
+  // ============== fetching user =====================
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
   let token = localStorage.getItem("token");
@@ -30,7 +32,8 @@ const Users = () => {
   useEffect(() => {
     fetchUsers();
   }, []);
-
+  // ============== End fetching user =====================
+  // ============== Deleting user =====================
   const handleDeleteUser = (id) => {
     if (window.confirm("Are you sure you want to delete This User ?")) {
       let token = localStorage.getItem("token");
@@ -54,6 +57,45 @@ const Users = () => {
         });
     }
   };
+  // ============== End Deleting  user =====================
+
+  // ============== pagination =========================
+  const [pageNumber, setPageNumber] = useState(0);
+  const usersPerPage = 5;
+  const pagesVisited = pageNumber * usersPerPage;
+  const displayUsers = users
+    .slice(pagesVisited, pagesVisited + usersPerPage)
+    .map((user) => {
+      return (
+        <tr>
+          <td>{user.fullName}</td>
+          <td>{user.email}</td>
+          <td>{user.role}</td>
+
+          <td className="right-td">
+            <td className="right-tdd">
+              <span className="actionss">
+                <BsFillTrashFill
+                  className="delete-btns"
+                  onClick={() => handleDeleteUser(user._id)}
+                />
+
+                <BsFillPencilFill
+                  className="edit-buttonns"
+                  onClick={() => navigate(`/dashboard/edituser/${user._id}`)}
+                />
+              </span>
+            </td>
+          </td>
+        </tr>
+      );
+    });
+
+  const pageCount = Math.ceil(users.length / usersPerPage);
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
+  // ============== End Pagination =====================
 
   return (
     <div className="sidebarr-right-sidee">
@@ -68,36 +110,21 @@ const Users = () => {
               <th className="actionf">Action</th>
             </tr>
           </thead>
-          <tbody>
-            {users.map((user) => {
-              return (
-                <tr>
-                  <td>{user.fullName}</td>
-                  <td>{user.email}</td>
-                  <td>{user.role}</td>
-
-                  <td className="right-td">
-                    <td className="right-tdd">
-                      <span className="actionss">
-                        <BsFillTrashFill
-                          className="delete-btns"
-                          onClick={() => handleDeleteUser(user._id)}
-                        />
-
-                        <BsFillPencilFill
-                          className="edit-buttonns"
-                          onClick={() =>
-                            navigate(`/dashboard/edituser/${user._id}`)
-                          }
-                        />
-                      </span>
-                    </td>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
+          <tbody>{displayUsers}</tbody>
         </table>
+        <div className="downn">
+          <ReactPaginate
+            previousLabel={"prev"}
+            nextLabel={"next"}
+            pageCount={pageCount}
+            onPageChange={changePage}
+            containerClassName={"paginationButtons"}
+            previousLinkClassName={"previousButton"}
+            nextLinkClassName={"nextButton"}
+            disabledClassName={"pageDisabled"}
+            activeClassName={"activePage"}
+          />
+        </div>
       </div>
       <ToastContainer />
     </div>
