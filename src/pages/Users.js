@@ -64,8 +64,8 @@ const Users = () => {
   const usersPerPage = 5;
   const pagesVisited = pageNumber * usersPerPage;
   const displayUsers = users
-    .slice(pagesVisited, pagesVisited + usersPerPage)
-    .map((user) => {
+    ?.slice(pagesVisited, pagesVisited + usersPerPage)
+    ?.map((user) => {
       return (
         <tr>
           <td>{user.fullName}</td>

@@ -75,7 +75,7 @@ const TourDashboard = () => {
             </tr>
           </thead>
           <tbody>
-            {tableData.map((table) => {
+            {tableData?.map((table) => {
               return (
                 <tr>
                   <td>

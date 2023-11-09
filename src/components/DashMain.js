@@ -150,7 +150,7 @@ const DashMain = () => {
     labels,
     datasets: [
       {
-        label: `  Number Of Booking for ${chart?.length} Months`,
+        label: "number of Bookings",
         data: chart?.map((cart) => cart.count),
         backgroundColor: "rgb(194,157,89)",
       },

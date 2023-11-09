@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 const Tour = () => {
   const navigate = useNavigate();
   const [tourLists, setTourLists] = useState([]);
+  console.log(tourLists);
   let token = localStorage.getItem("token");
   const fetchTourList = () => {
     axios({
@@ -61,7 +62,7 @@ const Tour = () => {
             {/* ==================================================== */}
 
             <div className="tourCards">
-              {tourLists.map((tour) => {
+              {tourLists?.map((tour) => {
                 return (
                   <div className="tourCard">
                     <img src={tour.backdropImage} alt="" />

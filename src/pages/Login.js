@@ -1,6 +1,6 @@
 import "../styles/Login.css";
 import { Link } from "react-router-dom";
-import { CgFacebook } from "react-icons/cg";
+import { CgFacebook, CgLogIn } from "react-icons/cg";
 import { FcGoogle } from "react-icons/fc";
 import axios from "axios";
 import { useState } from "react";
@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { logDOM } from "@testing-library/react";
 
 const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -27,6 +28,7 @@ const Login = () => {
       },
     })
       .then((response) => {
+        console.log(response);
         //user
         localStorage.setItem("user", JSON.stringify(response.data.user));
         const user = localStorage.getItem("user");

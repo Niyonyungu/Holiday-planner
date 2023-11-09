@@ -5,13 +5,13 @@ import "../styles/Bookings.css";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import ReactPaginate from "react-paginate";
 
 const Bookings = () => {
+  // ============= fetch booking ==============
   const params = useParams();
   let detailId = params.id;
-
   console.log(detailId);
-
   const navigate = useNavigate();
   const [bookings, setBookings] = useState([]);
   let token = localStorage.getItem("token");
@@ -37,6 +37,8 @@ const Bookings = () => {
     fetchBookings();
   }, []);
 
+  // ============= End fetch booking ===========
+  // ============= delete booking ==============
   const handleDeleteBook = (id) => {
     if (window.confirm("Are you sure you want to delete This Booking ?")) {
       let token = localStorage.getItem("token");
@@ -60,6 +62,48 @@ const Bookings = () => {
         });
     }
   };
+  // ============= End delete booking =============
+
+  // ============= Paginating =======================
+
+  const [bookPageNumber, setBookPageNumber] = useState(0);
+  const booksPerPage = 5;
+  const booksVisited = bookPageNumber * booksPerPage;
+  const bookingDisplay = bookings
+    .slice(booksVisited, booksVisited + booksPerPage)
+    .map((book) => {
+      return (
+        <tr>
+          <td className="book-id">{book.fullname}</td>
+          <td>{book.email}</td>
+          <td>{book.phone}</td>
+          <td>{book.date}</td>
+          <td>{book.numberOfTickets}</td>
+          <td>
+            <td>
+              <span className="actionss">
+                <BsFillTrashFill
+                  className="delete-btns"
+                  onClick={() => handleDeleteBook(book._id)}
+                />
+
+                <BsFillPencilFill
+                  className="edit-buttonns"
+                  onClick={() =>
+                    navigate(`/dashboard/editbookings/${book._id}`)
+                  }
+                />
+              </span>
+            </td>
+          </td>
+        </tr>
+      );
+    });
+  const bookCount = Math.ceil(bookings.length / booksPerPage);
+  const bookPage = ({ selected }) => {
+    setBookPageNumber(selected);
+  };
+  // ============   End Paginate ====================
 
   return (
     <div className="sidebar-right-sideee">
@@ -75,37 +119,21 @@ const Bookings = () => {
               <th className="actionf">Action</th>
             </tr>
           </thead>
-          <tbody>
-            {bookings.map((book) => {
-              return (
-                <tr>
-                  <td className="book-id">{book.fullname}</td>
-                  <td>{book.email}</td>
-                  <td>{book.phone}</td>
-                  <td>{book.date}</td>
-                  <td>{book.numberOfTickets}</td>
-                  <td>
-                    <td>
-                      <span className="actionss">
-                        <BsFillTrashFill
-                          className="delete-btns"
-                          onClick={() => handleDeleteBook(book._id)}
-                        />
-
-                        <BsFillPencilFill
-                          className="edit-buttonns"
-                          onClick={() =>
-                            navigate(`/dashboard/editbookings/${book._id}`)
-                          }
-                        />
-                      </span>
-                    </td>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
+          <tbody>{bookingDisplay}</tbody>
         </table>
+        <div className="downn">
+          <ReactPaginate
+            previousLabel={"prev"}
+            nextLabel={"Next"}
+            pageCount={bookCount}
+            onPageChange={bookPage}
+            containerClassName={"paginationButtons"}
+            previousLinkClassName={"previousButton"}
+            nextLinkClassName={"nextButton"}
+            disabledClassName={"pageDisabled"}
+            activeClassName={"activePage"}
+          />
+        </div>
       </div>
       <ToastContainer />
     </div>

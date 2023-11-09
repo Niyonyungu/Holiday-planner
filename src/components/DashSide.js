@@ -13,14 +13,15 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const SideBar = () => {
+  /*      ============  Logout  =============      */
   const navigate = useNavigate();
-  localStorage.removeItem("token");
-  localStorage.removeItem("user");
   const handleLogOut = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
     navigate("/login");
   };
-  /*      =========================      */
-  /*      =========================      */
+
+  /*      ==========  End Logout =============      */
 
   return (
     <aside className="sidebar">
