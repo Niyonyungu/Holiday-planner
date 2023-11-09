@@ -290,7 +290,7 @@ th{
   cursor: pointer;
 }
 
-.label {
+/* .label {
   border-radius: 3px;
   padding: 0.3rem;
   color: #fff;
@@ -306,7 +306,7 @@ th{
 
 .label-rel{
   background-color: #d9534f;
-}
+} */
 
 .actions{
   display: flex;

@@ -5,7 +5,9 @@ import "../styles/Dashboard.css";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import ReactPaginate from "react-paginate";
 
+// ============ tours fetchning ============================
 const TourDashboard = () => {
   const navigate = useNavigate();
   const [tableData, setTableData] = useState([]);
@@ -31,7 +33,8 @@ const TourDashboard = () => {
   useEffect(() => {
     fetchTours();
   }, []);
-
+  // ============ tours fetchning ============================
+  // ============ Delete   ===================================
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete This Tour ?")) {
       let token = localStorage.getItem("token");
@@ -55,13 +58,52 @@ const TourDashboard = () => {
         });
     }
   };
+  // ============ Delete End =================================
+  // ==================  PAGINATION  =========================
+  const [tourNumber, setTourNumber] = useState(0);
+  const toursPerPage = 4;
+  const toursVisited = tourNumber * toursPerPage;
+  const displayTours = tableData
+    .slice(toursVisited, toursVisited + toursPerPage)
+    .map((table) => {
+      return (
+        <tr>
+          <td>
+            <img src={table.backdropImage} alt="image" className="image-tour" />
+          </td>
+          <td>{table.destination}</td>
+          <td>{table.Duration} Days</td>
+          <td>{table.GroupSize}+ People</td>
+          <td> $ {table.Price}</td>
+          <td>
+            <td>
+              <span className="actions">
+                <BsFillTrashFill
+                  className="delete-btn"
+                  onClick={() => handleDelete(table._id)}
+                />
 
+                <BsFillPencilFill
+                  className="edit-buttonn"
+                  onClick={() => navigate(`/dashboard/edittour/${table._id}`)}
+                />
+              </span>
+            </td>
+          </td>
+        </tr>
+      );
+    });
+
+  const tourCount = Math.ceil(tableData.length / toursPerPage);
+  const changeTour = ({ selected }) => {
+    setTourNumber(selected);
+  };
+  // ==================  PAGINATION  =========================
   return (
     <div className="sidebar-right-side">
       <Link to="/dashboard/tourform">
         <button className="Add-tour-btn">+ Add Tour</button>
       </Link>
-
       <div className="table-component">
         <table class="table">
           <thead>
@@ -74,43 +116,21 @@ const TourDashboard = () => {
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>
-            {tableData?.map((table) => {
-              return (
-                <tr>
-                  <td>
-                    <img
-                      src={table.backdropImage}
-                      alt="image"
-                      className="image-tour"
-                    />
-                  </td>
-                  <td>{table.destination}</td>
-                  <td>{table.Duration} Days</td>
-                  <td>{table.GroupSize}+ People</td>
-                  <td> $ {table.Price}</td>
-                  <td>
-                    <td>
-                      <span className="actions">
-                        <BsFillTrashFill
-                          className="delete-btn"
-                          onClick={() => handleDelete(table._id)}
-                        />
-
-                        <BsFillPencilFill
-                          className="edit-buttonn"
-                          onClick={() =>
-                            navigate(`/dashboard/edittour/${table._id}`)
-                          }
-                        />
-                      </span>
-                    </td>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
+          <tbody>{displayTours}</tbody>
         </table>
+        <div className="downn">
+          <ReactPaginate
+            previousLabel={"prev"}
+            nextLabel={"next"}
+            pageCount={tourCount}
+            onPageChange={changeTour}
+            containerClassName={"paginationButtons"}
+            previousLinkClassName={"previousButton"}
+            nextLinkClassName={"nextButton"}
+            disabledClassName={"pageDisabled"}
+            activeClassName={"activePage"}
+          />
+        </div>
       </div>
       <ToastContainer />
     </div>
