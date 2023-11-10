@@ -6,8 +6,13 @@ import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import ReactPaginate from "react-paginate";
+import PuffLoader from "react-spinners/PuffLoader";
 
 const Bookings = () => {
+  // loading =========================
+  const [bookLoading, setBookLoading] = useState(false);
+  // loading End =====================
+
   // ============= fetch booking ==============
   const params = useParams();
   let detailId = params.id;
@@ -16,6 +21,7 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   let token = localStorage.getItem("token");
   const fetchBookings = () => {
+    setBookLoading(true);
     axios({
       method: "GET",
       url: "https://holiday-planner-4lnj.onrender.com/api/v1/booking/view",
@@ -24,10 +30,12 @@ const Bookings = () => {
       },
     })
       .then((Response) => {
+        setBookLoading(false);
         setBookings(Response.data);
         console.log(Response);
       })
       .catch((error) => {
+        setBookLoading(false);
         console.log(error);
         toast.error(error.message);
       });
@@ -107,34 +115,39 @@ const Bookings = () => {
 
   return (
     <div className="sidebar-right-sideee">
-      <div className="table-component">
-        <table class="tablee">
-          <thead>
-            <tr>
-              <th> Name</th>
-              <th> Email</th>
-              <th> Phone</th>
-              <th> Date</th>
-              <th> Number Of Tickets</th>
-              <th className="actionf">Action</th>
-            </tr>
-          </thead>
-          <tbody>{bookingDisplay}</tbody>
-        </table>
-        <div className="downn">
-          <ReactPaginate
-            previousLabel={"prev"}
-            nextLabel={"Next"}
-            pageCount={bookCount}
-            onPageChange={bookPage}
-            containerClassName={"paginationButtons"}
-            previousLinkClassName={"previousButton"}
-            nextLinkClassName={"nextButton"}
-            disabledClassName={"pageDisabled"}
-            activeClassName={"activePage"}
-          />
+      {bookLoading ? (
+        <PuffLoader className="circle-loaderr" color="#f58e00" size="380" />
+      ) : (
+        <div className="table-component">
+          <table class="tablee">
+            <thead>
+              <tr>
+                <th> Name</th>
+                <th> Email</th>
+                <th> Phone</th>
+                <th> Date</th>
+                <th> Number Of Tickets</th>
+                <th className="actionf">Action</th>
+              </tr>
+            </thead>
+            <tbody>{bookingDisplay}</tbody>
+          </table>
+          <div className="downn">
+            <ReactPaginate
+              previousLabel={"prev"}
+              nextLabel={"Next"}
+              pageCount={bookCount}
+              onPageChange={bookPage}
+              containerClassName={"paginationButtons"}
+              previousLinkClassName={"previousButton"}
+              nextLinkClassName={"nextButton"}
+              disabledClassName={"pageDisabled"}
+              activeClassName={"activePage"}
+            />
+          </div>
         </div>
-      </div>
+      )}
+
       <ToastContainer />
     </div>
   );

@@ -9,6 +9,7 @@ const Dasboard = () => {
   const token = localStorage.getItem("token");
   const userString = localStorage.getItem("user");
   const user = JSON.parse(userString);
+  const person = localStorage.getItem("user");
 
   useEffect(() => {
     console.log(userString);
@@ -25,7 +26,7 @@ const Dasboard = () => {
     <>
       <div className="wrap-da">
         <header className="header">
-          <h3>Hello , </h3>;
+          <h3>Hello , vainqueur </h3>;
         </header>
         <Outlet />
         <DashSide />

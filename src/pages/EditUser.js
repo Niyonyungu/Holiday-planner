@@ -6,9 +6,10 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 const EditUser = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [newUserLoading, setNewUserLoading] = useState(false);
   const navigate = useNavigate();
   const params = useParams();
   let tourId = params.id;
@@ -43,7 +44,7 @@ const EditUser = () => {
 
   const submitNewUser = (e) => {
     e.preventDefault();
-    setIsLoading(true);
+    setNewUserLoading(true);
     const data = {
       fullName: userName,
       email: userEmail,
@@ -62,14 +63,16 @@ const EditUser = () => {
       },
     })
       .then((Response) => {
+        setNewUserLoading(false);
         console.log(Response);
-        toast.success(Response.data.message);
-        setIsLoading(false);
+        toast.success("User Updated Succesfully");
+
         setTimeout(() => {
           navigate("/dashboard/users");
         }, 2000);
       })
       .catch((error) => {
+        setNewUserLoading(false);
         console.log(error);
         toast.error(error.message);
       });
@@ -113,7 +116,17 @@ const EditUser = () => {
       />
 
       <button className="addTourbu" onClick={submitNewUser}>
-        {isLoading ? "Submitting New User..." : "Create New User"}
+        {newUserLoading ? (
+          <ScaleLoader
+            color="#cc8809"
+            height={18}
+            radius={3}
+            width={9}
+            className="loader"
+          />
+        ) : (
+          "Create New User"
+        )}
       </button>
       <ToastContainer />
     </form>

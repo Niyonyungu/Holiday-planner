@@ -6,9 +6,10 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 const EditTour = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [editTourLoading, setEditTourLoading] = useState(false);
   const navigate = useNavigate();
   const params = useParams();
   let tourId = params.id;
@@ -69,7 +70,7 @@ const EditTour = () => {
   /*    ==============================      */
   const submitNewTour = (e) => {
     e.preventDefault();
-    setIsLoading(true);
+    setEditTourLoading(true);
     let formdata = new FormData();
     formdata.append("backdropImage", destinationImage);
     formdata.append("destination", destination);
@@ -99,14 +100,16 @@ const EditTour = () => {
       },
     })
       .then((Response) => {
+        setEditTourLoading(false);
         console.log(Response);
         toast.success(Response.data.message);
-        setIsLoading(false);
+
         setTimeout(() => {
           navigate("/dashboard/tourdashboard");
         }, 2000);
       })
       .catch((error) => {
+        setEditTourLoading(false);
         console.log(error);
         toast.error(error.message);
       });
@@ -283,7 +286,17 @@ const EditTour = () => {
       />
 
       <button className="addTourbu" onClick={submitNewTour}>
-        {isLoading ? "Submitting New Tour..." : "Submit New Tour"}
+        {editTourLoading ? (
+          <ScaleLoader
+            color="#cc8809"
+            height={18}
+            radius={3}
+            width={9}
+            className="loader"
+          />
+        ) : (
+          "Submit New Tour"
+        )}
       </button>
       <ToastContainer />
     </form>

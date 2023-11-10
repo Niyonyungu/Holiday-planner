@@ -95,7 +95,7 @@ const Sign = () => {
 
         <button onClick={(e) => handleSignup(e)} className="sl-button-submit">
           {isLoading ? (
-            <PulseLoader color="#de930e" className="loader" />
+            <PulseLoader color="#c29d59bf" className="loader" />
           ) : (
             "SIGN UP"
           )}

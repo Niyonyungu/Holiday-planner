@@ -135,7 +135,7 @@
    padding-top: 12px;
     background-color: #fff;
     height: 50px;
-    border: none;
+    border: 1px solid #c29d59bf ;
     border-radius: 10px;
 }
 .loader:hover{

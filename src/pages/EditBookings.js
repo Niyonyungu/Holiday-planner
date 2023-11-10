@@ -6,9 +6,10 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 const EditBookings = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [newBookingLoading, setNewBookingLoading] = useState(false);
   const navigate = useNavigate();
   const params = useParams();
   let bookId = params.id;
@@ -47,7 +48,7 @@ const EditBookings = () => {
 
   const submitNewBook = (e) => {
     e.preventDefault();
-    setIsLoading(true);
+    setNewBookingLoading(true);
     const data = {
       fullname: bookName,
       email: bookEmail,
@@ -68,14 +69,16 @@ const EditBookings = () => {
       },
     })
       .then((Response) => {
+        setNewBookingLoading(false);
         console.log(Response);
-        toast.success(Response.data.message);
-        setIsLoading(false);
+        toast.success("Booking Updated Succesfully");
+
         setTimeout(() => {
           navigate("/dashboard/bookings");
         }, 2000);
       })
       .catch((error) => {
+        setNewBookingLoading(false);
         console.log(error);
         toast.error(error.message);
       });
@@ -141,7 +144,17 @@ const EditBookings = () => {
       />
 
       <button className="addTourbu" onClick={submitNewBook}>
-        {isLoading ? "Submitting New Booking..." : "Create New Booking"}
+        {newBookingLoading ? (
+          <ScaleLoader
+            color="#cc8809"
+            height={18}
+            radius={3}
+            width={9}
+            className="loader"
+          />
+        ) : (
+          "Create New Booking"
+        )}
       </button>
       <ToastContainer />
     </form>

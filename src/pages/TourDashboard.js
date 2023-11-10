@@ -6,13 +6,17 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import ReactPaginate from "react-paginate";
+import PuffLoader from "react-spinners/PuffLoader";
 
-// ============ tours fetchning ============================
 const TourDashboard = () => {
+  const [tourLoading, setTourLoading] = useState(false);
+
+  // ============ tours fetchning ============================
   const navigate = useNavigate();
   const [tableData, setTableData] = useState([]);
   let token = localStorage.getItem("token");
   const fetchTours = () => {
+    setTourLoading(true);
     axios({
       method: "GET",
       url: "https://holiday-planner-4lnj.onrender.com/api/v1/tour",
@@ -21,10 +25,12 @@ const TourDashboard = () => {
       },
     })
       .then((Response) => {
+        setTourLoading(false);
         setTableData(Response.data);
         console.log(Response);
       })
       .catch((error) => {
+        setTourLoading(false);
         console.log(error);
         toast.error(error.message);
       });
@@ -100,39 +106,46 @@ const TourDashboard = () => {
   };
   // ==================  PAGINATION  =========================
   return (
-    <div className="sidebar-right-side">
-      <Link to="/dashboard/tourform">
-        <button className="Add-tour-btn">+ Add Tour</button>
-      </Link>
-      <div className="table-component">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Destination Image</th>
-              <th>Destination</th>
-              <th>Duration</th>
-              <th>Group Size</th>
-              <th>Price</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>{displayTours}</tbody>
-        </table>
-        <div className="downn">
-          <ReactPaginate
-            previousLabel={"prev"}
-            nextLabel={"next"}
-            pageCount={tourCount}
-            onPageChange={changeTour}
-            containerClassName={"paginationButtons"}
-            previousLinkClassName={"previousButton"}
-            nextLinkClassName={"nextButton"}
-            disabledClassName={"pageDisabled"}
-            activeClassName={"activePage"}
-          />
-        </div>
+    <div>
+      <div className="sidebar-right-side">
+        <Link to="/dashboard/tourform">
+          <button className="Add-tour-btn">+ Add Tour</button>
+        </Link>
+        {tourLoading ? (
+          <PuffLoader className="circle-loader" color="#f58e00" size="340" />
+        ) : (
+          <div className="table-component">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Destination Image</th>
+                  <th>Destination</th>
+                  <th>Duration</th>
+                  <th>Group Size</th>
+                  <th>Price</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody> {displayTours} </tbody>
+            </table>
+            <div className="downn">
+              <ReactPaginate
+                previousLabel={"prev"}
+                nextLabel={"next"}
+                pageCount={tourCount}
+                onPageChange={changeTour}
+                containerClassName={"paginationButtons"}
+                previousLinkClassName={"previousButton"}
+                nextLinkClassName={"nextButton"}
+                disabledClassName={"pageDisabled"}
+                activeClassName={"activePage"}
+              />
+            </div>
+          </div>
+        )}
+
+        <ToastContainer />
       </div>
-      <ToastContainer />
     </div>
   );
 };

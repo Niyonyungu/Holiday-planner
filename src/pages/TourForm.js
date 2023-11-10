@@ -4,9 +4,10 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 const TourForm = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [NewFormLoading, setNewFormLoading] = useState(false);
   const navigate = useNavigate();
   const [destinationImage, setDestinationImage] = useState();
   const [destination, setDestination] = useState();
@@ -26,7 +27,7 @@ const TourForm = () => {
 
   const submitTour = (e) => {
     e.preventDefault();
-    setIsLoading(true);
+    setNewFormLoading(true);
     let data = new FormData();
     data.append("backdropImage", destinationImage);
     data.append("destination", destination);
@@ -56,14 +57,16 @@ const TourForm = () => {
       },
     })
       .then((Response) => {
+        setNewFormLoading(false);
         console.log(Response);
         toast.success(Response.data.message);
-        setIsLoading(false);
+
         setTimeout(() => {
           navigate("/dashboard/tourdashboard");
         }, 2000);
       })
       .catch((error) => {
+        setNewFormLoading(false);
         console.log(error);
         toast.error(error.message);
       });
@@ -71,7 +74,6 @@ const TourForm = () => {
 
   return (
     <form action="" className="addTurForm">
-      {/* <h4>ADD TOUR</h4> */}
       <div>
         <label htmlFor=""> Destination Image</label>
         <input
@@ -255,7 +257,17 @@ const TourForm = () => {
       </div>
 
       <button className="addTourbu" onClick={submitTour}>
-        {isLoading ? "Creating New Tour..." : "Create New Tour"}
+        {NewFormLoading ? (
+          <ScaleLoader
+            color="#cc8809"
+            height={18}
+            radius={3}
+            width={9}
+            className="loader"
+          />
+        ) : (
+          "Create New Tour"
+        )}
       </button>
       <ToastContainer />
     </form>

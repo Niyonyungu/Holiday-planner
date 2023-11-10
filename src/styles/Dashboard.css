@@ -290,23 +290,22 @@ th{
   cursor: pointer;
 }
 
-/* .label {
-  border-radius: 3px;
-  padding: 0.3rem;
-  color: #fff;
+.circle-loader{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: row;
+ margin-left: 400px;
+ margin-top: 50px;
 }
-
-.label-draft{
-  background-color: #777;
-}
-
-.label-live{
-  background-color: #42a942;
-}
-
-.label-rel{
-  background-color: #d9534f;
-} */
+.circle-loaderr{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-left: 300px;
+  margin-top: 50px;
+ }
 
 .actions{
   display: flex;
