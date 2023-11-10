@@ -1,5 +1,7 @@
+import React, { useState } from "react";
 import zebra from "../assets/brownZebraPrint.jpg";
 import "../styles/Dashboard.css";
+
 const StatsCard = ({ title, amount }) => {
   return (
     <div className="stats-container">

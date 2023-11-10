@@ -26,7 +26,7 @@ const Dasboard = () => {
     <>
       <div className="wrap-da">
         <header className="header">
-          <h3>Hello , vainqueur </h3>;
+          <h3>Hello , vainqueur </h3>
         </header>
         <Outlet />
         <DashSide />

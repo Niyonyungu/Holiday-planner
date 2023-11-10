@@ -4,6 +4,14 @@ body{
 }
 
 /* ----==============STATS=========================---*/
+.statsloader{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+
+}
+
 .stat-card{
   margin: 0px auto;
   display: flex;
@@ -20,7 +28,7 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 200px;
+  margin-top: 280px;
 }
 
 .stats-img{
@@ -80,8 +88,7 @@ body{
     align-items: center;
     justify-content: center; 
     height: 100vh;
-    padding-left: 180px;
-   
+    padding-left: 180px;  
 }
 
 
@@ -193,7 +200,7 @@ body{
     color: rgb(194,157,89);
   }
   .sidebar  li :hover{
-    color: rgb(194,157,89);
+    color: #c29d59;
   }
   .sidebar-list-item > a {
     text-decoration: none;

@@ -4,7 +4,7 @@ import StatsCard from "./StatsCard";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
-
+import ClipLoader from "react-spinners/ClipLoader";
 // ==============   charts Import s =================
 
 import {
@@ -31,6 +31,7 @@ ChartJS.register(
 );
 // ==============  End charts Import s =================
 const DashMain = () => {
+  const [statsLoading, setStatsLoading] = useState(false);
   // ==============  Booking =================
   const [bookings, setBookings] = useState([]);
   let token = localStorage.getItem("token");
@@ -84,6 +85,7 @@ const DashMain = () => {
   const [tourLists, setTourLists] = useState([]);
 
   const fetchTourList = () => {
+    setStatsLoading(true);
     axios({
       method: "GET",
       url: "https://holiday-planner-4lnj.onrender.com/api/v1/tour",
@@ -92,10 +94,12 @@ const DashMain = () => {
       },
     })
       .then((Response) => {
+        setStatsLoading(false);
         setTourLists(Response.data);
         console.log(Response);
       })
       .catch((error) => {
+        setStatsLoading(false);
         console.log(error);
       });
   };
@@ -183,9 +187,36 @@ const DashMain = () => {
   return (
     <div className="dashboard-center">
       <div className="stat-card">
-        <StatsCard title="Tours" amount={tourLists.length} />
-        <StatsCard title="Booking" amount={bookings.length} />
-        <StatsCard title="users" amount={users.length} />
+        <StatsCard
+          title="Tours"
+          amount={
+            statsLoading ? (
+              <ClipLoader color="#c29d59" size={15} className="statsloader" />
+            ) : (
+              tourLists.length
+            )
+          }
+        />
+        <StatsCard
+          title="Booking"
+          amount={
+            statsLoading ? (
+              <ClipLoader color="#c29d59" size={15} className="statsloader" />
+            ) : (
+              bookings.length
+            )
+          }
+        />
+        <StatsCard
+          title="users"
+          amount={
+            statsLoading ? (
+              <ClipLoader color="#c29d59" size={15} className="statsloader" />
+            ) : (
+              users.length
+            )
+          }
+        />
       </div>
 
       <div className="charts">
