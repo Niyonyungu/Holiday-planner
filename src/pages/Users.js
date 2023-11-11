@@ -116,7 +116,6 @@ const Users = () => {
                 <th>User Name</th>
                 <th>User Email</th>
                 <th>User Role</th>
-
                 <th className="actionf">Action</th>
               </tr>
             </thead>
