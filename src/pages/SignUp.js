@@ -32,6 +32,7 @@ const Sign = () => {
         localStorage.setItem("token", Response.data.access_token);
         localStorage.setItem("user", JSON.stringify(Response.data.user));
         toast.success("User registered succesfully");
+        console.log(Response);
         setIsLoading(false);
         setTimeout(() => {
           navigate("/login");

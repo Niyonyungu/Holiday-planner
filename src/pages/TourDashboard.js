@@ -12,9 +12,11 @@ const TourDashboard = () => {
   const [tourLoading, setTourLoading] = useState(false);
 
   // ============ tours fetchning ============================
+
   const navigate = useNavigate();
   const [tableData, setTableData] = useState([]);
   let token = localStorage.getItem("token");
+
   const fetchTours = () => {
     setTourLoading(true);
     axios({
@@ -35,11 +37,11 @@ const TourDashboard = () => {
         toast.error(error.message);
       });
   };
-
   useEffect(() => {
     fetchTours();
   }, []);
   // ============ tours fetchning ============================
+
   // ============ Delete   ===================================
   const handleDelete = (id) => {
     if (window.confirm("Are you sure you want to delete This Tour ?")) {
@@ -65,6 +67,7 @@ const TourDashboard = () => {
     }
   };
   // ============ Delete End =================================
+
   // ==================  PAGINATION  =========================
   const [tourNumber, setTourNumber] = useState(0);
   const toursPerPage = 4;
@@ -143,7 +146,6 @@ const TourDashboard = () => {
             </div>
           </div>
         )}
-
         <ToastContainer />
       </div>
     </div>

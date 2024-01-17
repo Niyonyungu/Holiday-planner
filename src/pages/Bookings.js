@@ -147,7 +147,6 @@ const Bookings = () => {
           </div>
         </div>
       )}
-
       <ToastContainer />
     </div>
   );
