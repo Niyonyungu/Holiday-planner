@@ -19,3 +19,6 @@ Holiday Planner is a website where a user can go and create an acount and book a
 - Create An Acount And Make A Booking.
 
 ## ! Responsive To Mobile Devices !
+## Admin Credentials For Testing Purposes
+-UserName : klabadmin@gmail.com
+-Password : password
